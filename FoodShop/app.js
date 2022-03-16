@@ -16,8 +16,7 @@ const DB = process.env.DB_CONNECTION.replace(
   '<password>',
   process.env.DB_PASSWORD
 );
-mongoose 
-  .connect(DB, {
+mongoose.connect(DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
