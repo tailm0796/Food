@@ -29,5 +29,11 @@
     "nodemailer": "^6.7.0",
     "nodemon": "^2.0.13",
     "slugify": "^1.6.1"
-  }
+  },
+    "name": "example-app",
+    "description": "a really cool app",
+    "version": "1.0.0",
+    "engines": {
+      "node": "16.x"
+    }
 }
