@@ -7,7 +7,8 @@ router.use(authController.isLogin);
 
 router.get('/checkout',viewController.checkLogin,viewController.checkout);
 router.get('/products',viewController.products);
-router.get('/home', viewController.home);
+// router.get('/home', viewController.home);
+router.get('/', viewController.home);
 router.get('/product/:slug',viewController.details);
 router.get('/createProductForm',viewController.createProductForm);
 router.get('/signup',viewController.signupForm);
