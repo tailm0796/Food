@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Document</title>
+    <style>
+      #chart{
+        height: 452.8px;
+        width: 907.2px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h3 style="text-align:center">Thống kê doanh thu theo tháng</h3>
+    <div id="chart">
+      <canvas id="myChart"></canvas>
+    </div>
+    <script>
+      const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July','August', 'September', 'October', 'November', 'December']
+      const showChart = async function () {
+      const res = await fetch("http://localhost:3000/admin/salesByMonth");
+      const results =  await res.json();
+      //console.log(results);
+      const labels = results.data.map(el => months[el._id - 1]); // month
+      const salesData = results.data.map(el => el.sumPrice) // sales
+      const data = {
+        labels,
+        datasets: [
+          {
+            label: "Sale By Month",
+            data: salesData,
+            backgroundColor: [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(255, 159, 64, 0.2)",
+              "rgba(255, 205, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+              "rgba(201, 203, 207, 0.2)",
+            ],
+            borderColor: [
+              "rgb(255, 99, 132)",
+              "rgb(255, 159, 64)",
+              "rgb(255, 205, 86)",
+              "rgb(75, 192, 192)",
+              "rgb(54, 162, 235)",
+              "rgb(153, 102, 255)",
+              "rgb(201, 203, 207)",
+            ],
+            borderWidth: 1,
+          },
+        ],
+      };
+      const config = {
+        type: "bar",
+        data: data,
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      };
+      const myChart = new Chart(document.getElementById("myChart"), config);
+    }
+    showChart();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+
+<%- layout('./layout/template') %>
+<link rel="stylesheet" type="text/css" href="/css/product.css">
+<div class="create-product">
+    <h1 class="heading"><span>Cập nhật sản phẩm</span></h1>
+    <form method="POST" action="/api/product/<%= product.id %>?_method=PATCH" enctype="multipart/form-data" id="updateForm">
+        <div class="inputBox">
+            <label for="name">Tên sản phẩm</label>
+            <input type="text" id="name" name="name" value="<%= product.name %>"> <br>
+            <label for="price">Giá sản phẩm</label>
+            <input type="number" id="price" name="price"value= <%= product.price %> > <br>
+            <label for="description">Mô tả sản phẩm</label>
+            <textarea id="description" name="description" cols="80" rows="4" form="updateForm"><%= product.description %> 
+            </textarea>
+            <label for="images">Hình ảnh sản phẩm</label>
+            <input type="file" name="images" placeholder="images" multiple><br>
+            <input type="submit" value="submit" class="btn">
+        </div>
+    </form>
+</div>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/adminDashboard.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>My Admin Page</h1>
+    <h2><span>Danh sách hóa đơn</span></h2>
+    <section class="product-table">
+      <table>
+        <tr>
+          <th>STT</th>
+          <th>Tên KH</th>
+          <th>Lời nhắn</th>
+          <th>SĐT</th>
+          <th>Địa chỉ</th>
+          <th>Số lượng</th>
+          <th>Tổng tiền</th>
+          <th>Ngày đặt</th>
+          <th>Chi tiết</th>
+        </tr>
+        <% let count = 1 %> 
+        <% for (let order of orders) { %>
+            <tr>
+                <td><%= count %> </td>
+                <td><%= order.user.username %></td>
+                <td><%= order.message%></td>
+                <td><%= order.phone%></td>
+                <td><%= order.address %> </td>
+                <td><%= order.totalQty %> </td>
+                <td><%= order.totalPrice %> </td>
+                <% const date =  new Date(order.date)  %> 
+                <td>
+                    <%= new Intl.DateTimeFormat('vn-VN').format(date)%>
+                </td> 
+                <td class="button">
+                    <button class="update">
+                    <a href="/admin/order/<%= order.id%>">Chi tiết</a>
+                    </button>
+                </td>
+            </tr>
+            <% count++ %> 
+        <% } %>
+       </table>
+    </section>
+  </body>
+</html>

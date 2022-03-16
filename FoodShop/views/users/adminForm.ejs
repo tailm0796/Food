@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js"
+      integrity="sha512-Idr7xVNnMWCsgBQscTSCivBNWWH30oo/tzYORviOCrLKmBaRxRflm2miNhTFJNVmXvCtzgms5nlJF4az2hiGnA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="stylesheet" href="/css/adminLogin.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/home" class="logo"><i class="fas fa-utensils"></i> FastFood </a>
+    </header>
+    <div class="wrapper">
+      <div class="container">
+        <h1>Welcome</h1>
+        <h3>FastFood Admin!</h3>
+        <form class="form">
+          <input type="email" placeholder="Tên đăng nhập" />
+          <input type="password" placeholder="Mật khẩu" />
+          <button type="submit" id="login-button">Login</button>
+        </form>
+      </div>
+      <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    const hideAlert = () => {
+      const el = document.querySelector(".alert");
+      if (el) el.parentElement.removeChild(el);
+    };
+    const showAlert = (type, message) => {
+      hideAlert();
+      const markup = `<div class="alert alert--${type}">${message}</div>`;
+      document.querySelector("body").insertAdjacentHTML("afterbegin", markup);
+      window.setTimeout(hideAlert, 3000);
+    };
+    // HANDLE FORM
+    const loginUser = async (email, password) => {
+      try {
+        const response = await axios({
+          method: "POST",
+          url: "http://localhost:3000/admin/login",
+          data: {
+            email,
+            password,
+          },
+        });
+        if (response.data.status === "success") {
+          showAlert("success", "Login Successfully");
+          window.setTimeout(() => {
+            location.assign("/admin/dashboard");
+          }, 1000);
+        }
+      } catch (err) {
+        showAlert("failed", err.response.data.message);
+      }
+    };
+    const formBtn = document.querySelector("#login-button");
+    const form = document.querySelector(".form");
+    formBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      const email = document.querySelector(".form input[type=email]").value;
+      const password = document.querySelector(".form input[type=password]").value;
+      loginUser(email, password);
+    });
+  </script>
+</html>

@@ -1,0 +1,53 @@
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Giỏ Hàng</h5>
+            <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+                <span class="cart-price cart-header cart-column">Giá</span>
+                <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+                <span class="cart-price cart-header cart-column">Tổng Giá</span>
+                <span class="cart-price cart-header cart-column">Xóa</span>
+            </div>
+            <div class="cart-items">
+                <% if (cart) { %> 
+                    <% for (product of cart.listProduct) { %> 
+                        <div class="cart-row">
+                            <div class="cart-item cart-column">
+                                <img class="cart-item-image" src="<%= product.info.images[0].url %>" alt="<%= product.name %>" width="100" height="100">
+                                <span class="cart-item-title"><%= product.name %> </span>
+                            </div>
+                            <span class="cart-price cart-column"><%= new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product.info.price)%> </span>
+                            <div class="cart-quantity cart-column">
+                                <input class="cart-quantity-input" type="number" id="<%= product.id %>" value="<%= product.qty %>" onchange="changeQtyItems(this)" >
+                            </div>
+                            <span class="cart-price cart-column"><%= product.price %> </span>
+                            <button class="btn btn-danger" type="button" onclick="deleteItems('<%= product.id %>')">Xóa</button>
+                        </div>
+                    <% } %> 
+                </div>
+                <div class="cart-total">
+                    <strong class="cart-total-title">Tổng Cộng:</strong>
+                    <span class="cart-total-price"><%= new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(cart.totalPrice) %> </span><br>
+                    <strong class="cart-total-title">Tổng số lượng:</strong>
+                    <span class="cart-total-price"><%= cart.totalQuantity %> </span>
+                </div>
+                <% } else { %> 
+                    <div class="cart-total">
+                        <strong class="cart-total-title">Tổng Cộng:</strong>
+                        <span class="cart-total-price">0 </span><br>
+                        <strong class="cart-total-title">Tổng số lượng:</strong>
+                        <span class="cart-total-price">0 </span>
+                    </div>
+                <% } %> 
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn close-footer">Đóng</button>
+            <a href="/checkout"><button type="button" class="btn order">Thanh Toán</button></a>
+        </div>
+    </div>
+</div>
