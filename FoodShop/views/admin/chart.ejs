@@ -22,7 +22,7 @@
     <script>
       const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July','August', 'September', 'October', 'November', 'December']
       const showChart = async function () {
-      const res = await fetch("http://localhost:3000/admin/salesByMonth");
+      const res = await fetch("http://www.seoie204.me/admin/salesByMonth");
       const results =  await res.json();
       //console.log(results);
       const labels = results.data.map(el => months[el._id - 1]); // month

@@ -29,7 +29,7 @@ const loginUser = async (email, password) => {
   try {
   const response = await axios ({
     method: 'POST',
-    url:'http://localhost:3000/api/user/login',
+    url:'http://www.seoie204.me/api/user/login',
     data: {
       email,
       password,
@@ -56,7 +56,7 @@ const registerUser = async (data) => {
   try {
   const response = await axios ({
     method: 'POST',
-    url:'http://localhost:3000/api/user/signup',
+    url:'http://www.seoie204.me/api/user/signup',
     data,
   })
   if (response.data.status === 'success'){

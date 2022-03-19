@@ -140,7 +140,7 @@ module.exports.order = catchAsync(async (req, res, next) => {
   await orderProduct.save();
   })
   try {
-    const url = "http://localhost:3000/home";
+    const url = "http://www.seoie204.me/";
     const data = req.session.cart;
     const sendEmail = new Email(user,url,data);
     await sendEmail.sendMail();
