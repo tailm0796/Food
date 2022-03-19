@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /admin/
+Disallow: /admin
 
-Sitemap: seoie204.me/sitemap.xml
+Sitemap: https://www.seoie204.me/sitemap.xml
