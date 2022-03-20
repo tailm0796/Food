@@ -1,4 +1,3 @@
-
 window.onscroll = () => {
   if (window.scrollY > 60) {
     document.querySelector("#scroll-top").classList.add("active");
@@ -48,71 +47,71 @@ let Cart = document.querySelector("#cart");
 async function addCart(id) {
   try {
     const idProduct = id;
-    const response  = await axios({
+    const response = await axios({
       method: "GET",
-      url: "http://www.seoie204.me/api/product/addCart/"+ idProduct,
-    })
+      url: "http://www.seoie204.me/api/product/addCart/" + idProduct,
+    });
     Cart.innerHTML = "";
     Cart.innerHTML = response.data;
     showCart();
     popup();
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
-async function deleteItems (id) {
+async function deleteItems(id) {
   try {
     const idProduct = id;
-    const response  = await axios({
+    const response = await axios({
       method: "GET",
-      url: "http://www.seoie204.me/api/product/deleteItem/"+idProduct,
-    })
+      url: "http://www.seoie204.me/api/product/deleteItem/" + idProduct,
+    });
     Cart.innerHTML = "";
     Cart.innerHTML = response.data;
     showCart();
     popup();
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
-async function changeQtyItems (el) {
+async function changeQtyItems(el) {
   try {
-    const response  = await axios({
+    const response = await axios({
       method: "GET",
       url: `http://www.seoie204.me/api/product/editQtyItem/${el.id}/qty/${el.value}`,
-    })
+    });
     Cart.innerHTML = "";
     Cart.innerHTML = response.data;
     showCart();
     popup();
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
 //LOG OUT USER
-const btnLogout = document.querySelector('.btn-logout');
-const logout = async function ()  {
+const btnLogout = document.querySelector(".btn-logout");
+const logout = async function () {
   try {
     const res = await axios({
-    method: 'GET',
-    url : 'http://www.seoie204.me/api/user/logout',
+      method: "GET",
+      url: "http://www.seoie204.me/api/user/logout",
     });
-    if (res.data.status === 'success') {
-    location.assign('/home')
+    if (res.data.status === "success") {
+      location.assign("/home");
     }
-  } catch(err) {
-    alert('Try Again');
+  } catch (err) {
+    alert("Try Again");
   }
-}
+};
 if (btnLogout) {
-  btnLogout.addEventListener('click', function (e) {
+  btnLogout.addEventListener("click", function (e) {
     e.preventDefault();
     logout();
-  })
+  });
 }
-function menuToggle(){
-  const toggleMenu = document.querySelector('.list');
-  toggleMenu.classList.toggle('active')
+function menuToggle() {
+  const toggleMenu = document.querySelector(".list");
+  toggleMenu.classList.toggle("active");
 }
 
 //rate - us
@@ -137,7 +136,7 @@ nextBtnHome.addEventListener("click", () => {
   }
   slidesHome[slideNumber].classList.add("active");
   slideIconsHome[slideNumber].classList.add("active");
-})
+});
 prevBtnHome.addEventListener("click", () => {
   slidesHome.forEach((slide) => {
     slide.classList.remove("active");
@@ -152,11 +151,11 @@ prevBtnHome.addEventListener("click", () => {
   }
   slidesHome[slideNumber].classList.add("active");
   slideIconsHome[slideNumber].classList.add("active");
-})
+});
 //auto slide
 var playSlide;
-var repeater = () =>{
-  playSlide = setInterval(function(){
+var repeater = () => {
+  playSlide = setInterval(function () {
     slidesHome.forEach((slide) => {
       slide.classList.remove("active");
     });
@@ -164,19 +163,21 @@ var repeater = () =>{
       slideIcon.classList.remove("active");
     });
     slideNumber++;
-  
+
     if (slideNumber > 4) {
       slideNumber = 0;
     }
     slidesHome[slideNumber].classList.add("active");
     slideIconsHome[slideNumber].classList.add("active");
   }, 4000);
-}
+};
 repeater();
 // Smooth scroll
-const scrollTo = document.querySelectorAll('.scroll');
-scrollTo.forEach(el => el.addEventListener('click', function(e) {
-  e.preventDefault();
-  const section = document.querySelector(`#${e.target.dataset.section}`);
-  section.scrollIntoView({behavior: "smooth"});
-}));
+const scrollTo = document.querySelectorAll(".scroll");
+scrollTo.forEach((el) =>
+  el.addEventListener("click", function (e) {
+    e.preventDefault();
+    const section = document.querySelector(`#${e.target.dataset.section}`);
+    section.scrollIntoView({ behavior: "smooth" });
+  })
+);

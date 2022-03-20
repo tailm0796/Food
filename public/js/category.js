@@ -1,19 +1,19 @@
-let menu = document.querySelector('#menu-bar');
-  let navbar = document.querySelector('.navbar');
+let menu = document.querySelector("#menu-bar");
+let navbar = document.querySelector(".navbar");
 
-  menu.onclick = () => {
-    menu.classList.toggle('fa-times');
-    navbar.classList.toggle('active');
-  }
+menu.onclick = () => {
+  menu.classList.toggle("fa-times");
+  navbar.classList.toggle("active");
+};
 
-  menu.onclick = () => {
-    menu.classList.toggle('fa-times');
-    navbar.classList.toggle('active');
-  } 
+menu.onclick = () => {
+  menu.classList.toggle("fa-times");
+  navbar.classList.toggle("active");
+};
 
 window.onscroll = () => {
   menu.classList.remove("fa-times");
-    navbar.classList.remove("active"); 
+  navbar.classList.remove("active");
 
   if (window.scrollY > 60) {
     document.querySelector("#scroll-top").classList.add("active");
@@ -100,15 +100,15 @@ slider.addEventListener("mouseout", () => {
 
 //nav
 navbar = document.querySelector(".menunav").querySelectorAll("a");
-  //console.log(navbar);
-  
-  navbar.forEach(Element => {
-    Element.addEventListener("click", function(){
-      navbar.forEach(nav=>nav.classList.remove("active"))
-  
-      this.classList.add("active");
-    })
-  })
+//console.log(navbar);
+
+navbar.forEach((Element) => {
+  Element.addEventListener("click", function () {
+    navbar.forEach((nav) => nav.classList.remove("active"));
+
+    this.classList.add("active");
+  });
+});
 
 //Menu Nav
 const menuNav = document.querySelector("#menunav");
