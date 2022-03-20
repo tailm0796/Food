@@ -13,7 +13,7 @@ class Cart {
     } else {
       let newProduct = {
         id: product.id,
-        name: product.name,
+        name: product.name,        
         price: product.price,
         info: product,
         qty: 0,
