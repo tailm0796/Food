@@ -668,6 +668,7 @@ h5.modal-title {
     font-size: 1.5rem;
     text-transform: none;
     color: #666;
+    text-align: justify;
 }
   
 /*.popular .box-container .box .stars i{
