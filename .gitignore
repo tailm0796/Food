@@ -1,3 +1,7 @@
+# dependencies
 /node_modules
 package-lock.json
-.env
+
+# local config
+**/*.env
+**/.vscode
