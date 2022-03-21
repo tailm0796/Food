@@ -164,6 +164,11 @@ section {
 .product-category-detail .field-note p {
   margin-bottom: 5px;
 }
+
+.product-category-detail .field-text {
+  text-align: justify;
+}
+
 .product-category-detail p,
 .product-category-detail .quantity {
   color: #0e0e0e;

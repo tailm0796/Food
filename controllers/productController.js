@@ -8,7 +8,7 @@ const Cart = require("../cart");
 const AppError = require("../utils/appError");
 const Email = require("../utils/sendEmail");
 const { cloudinary } = require("../cloudinary");
-module.exports.createNewProduct = catchAsync(async (req, res, next) => {
+module.exports.createNewProduct = catchAsync(async (req, res) => {
   let idCategory;
   if (req.params.categoryID) idCategory = req.params.categoryID;
   if (req.body.category) idCategory = req.body.category;
@@ -34,7 +34,7 @@ module.exports.createNewProduct = catchAsync(async (req, res, next) => {
   }) */
   res.redirect("/admin/dashboard");
 });
-module.exports.getAllProduct = catchAsync(async (req, res, next) => {
+module.exports.getAllProduct = catchAsync(async (req, res) => {
   const products = await Product.find();
   res.status(200).json({
     status: "success",
@@ -99,7 +99,7 @@ module.exports.deleteProduct = catchAsync(async (req, res, next) => {
     message: "Delete success",
   });
 });
-module.exports.addCart = catchAsync(async (req, res, next) => {
+module.exports.addCart = catchAsync(async (req, res) => {
   const { id } = req.params;
   const product = await Product.findById(id);
   const cart = new Cart(req.session.cart ? req.session.cart : {});
@@ -108,7 +108,7 @@ module.exports.addCart = catchAsync(async (req, res, next) => {
   res.locals.cart = cart;
   res.render("cart/index");
 });
-module.exports.deleteItem = (req, res, next) => {
+module.exports.deleteItem = (req, res) => {
   const { id } = req.params;
   const cart = new Cart(req.session.cart ? req.session.cart : {});
   cart.deleteFromCart(id);
@@ -121,7 +121,7 @@ module.exports.deleteItem = (req, res, next) => {
   }
   res.render("cart/index");
 };
-module.exports.editQtyItem = (req, res, next) => {
+module.exports.editQtyItem = (req, res) => {
   const { id } = req.params;
   const qty = req.params.qty * 1;
   const cart = new Cart(req.session.cart ? req.session.cart : {});
@@ -130,8 +130,8 @@ module.exports.editQtyItem = (req, res, next) => {
   res.locals.cart = cart;
   res.render("cart/index");
 };
-module.exports.order = catchAsync(async (req, res, next) => {
-  const { username, email, phone, address, message, date } = req.body;
+module.exports.order = catchAsync(async (req, res) => {
+  const { email, phone, address, message, date } = req.body;
   const user = await User.findOne({ email: email });
   const order = new Order({
     user: user.id,
@@ -166,7 +166,7 @@ module.exports.order = catchAsync(async (req, res, next) => {
     message: "Order successfuly",
   });
 });
-module.exports.bestSeller = catchAsync(async (req, res, next) => {
+module.exports.bestSeller = catchAsync(async (req, res) => {
   const bestSeller = await OrderProduct.aggregate()
     .group({
       _id: "$product",

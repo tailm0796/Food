@@ -3,7 +3,6 @@ const multer = require("multer");
 const router = express.Router({ mergeParams: true });
 const productController = require("../controllers/productController");
 const { storage } = require("../cloudinary/index");
-const { cloudinary } = require("../cloudinary");
 const upload = multer({ storage });
 
 // /product/

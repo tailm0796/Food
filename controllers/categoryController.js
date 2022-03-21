@@ -1,7 +1,7 @@
 const Category = require("../models/categoryModel");
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
-module.exports.getAllCategory = catchAsync(async (req, res, next) => {
+module.exports.getAllCategory = catchAsync(async (req, res) => {
   const categories = await Category.find();
   res.status(200).json({
     status: "success",
@@ -9,7 +9,7 @@ module.exports.getAllCategory = catchAsync(async (req, res, next) => {
     data: categories,
   });
 });
-module.exports.creatNewCategory = catchAsync(async (req, res, next) => {
+module.exports.creatNewCategory = catchAsync(async (req, res) => {
   const category = await Category.create(req.body);
   res.status(200).json({
     status: "success",

@@ -668,6 +668,7 @@ h5.modal-title {
     font-size: 1.5rem;
     text-transform: none;
     color: #666;
+    text-align: justify;
 }
   
 /*.popular .box-container .box .stars i{
@@ -702,14 +703,34 @@ h5.modal-title {
 /*footer*/
 
 .footer{
+
     background: var(--black);
+
+    padding:2rem 4rem;
+
+}
+
+.footer iframe{
+    margin-top: 10px;
 }
 
 .footer .box-container{
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+
+    /*grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));*/
+
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+
     gap:1.5rem;
+
 }
+
+.footer .box-container .box {
+    padding: 0 20px 0 20px;
+    text-align: justify;
+}
+
 
 .footer .box-container .box h3{
     font-size: 2.5rem;

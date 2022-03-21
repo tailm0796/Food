@@ -2,7 +2,7 @@ const Category = require("../models/categoryModel");
 const Product = require("../models/productModel");
 const OrderProduct = require("../models/orderProductModel");
 const catchAsync = require("../utils/catchAsync");
-module.exports.home = catchAsync(async (req, res, next) => {
+module.exports.home = catchAsync(async (req, res) => {
   /* const products = await Product.find().limit(8); */
   const bestSeller = await OrderProduct.aggregate()
     .group({
@@ -25,7 +25,7 @@ module.exports.signupForm = (req, res) => {
 module.exports.loginForm = (req, res) => {
   res.render("users/loginForm");
 };
-module.exports.createProductForm = catchAsync(async (req, res, next) => {
+module.exports.createProductForm = catchAsync(async (req, res) => {
   const categories = await Category.find();
   res.render("products/productForm", { categories });
 });

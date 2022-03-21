@@ -13,7 +13,7 @@ module.exports.isAdmin = (req, res, next) => {
   }
   next();
 };
-module.exports.dashboard = catchAsync(async (req, res, next) => {
+module.exports.dashboard = catchAsync(async (req, res) => {
   const products = await Product.find();
   res.render("admin/admin", { products });
 });

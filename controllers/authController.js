@@ -23,7 +23,7 @@ const sendJWTtoken = (res, user, statusCode) => {
     user,
   });
 };
-module.exports.signup = catchAsync(async (req, res, next) => {
+module.exports.signup = catchAsync(async (req, res) => {
   const user = await User.create({
     username: req.body.username,
     email: req.body.email,
