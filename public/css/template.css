@@ -702,13 +702,27 @@ h5.modal-title {
 /*footer*/
 
 .footer{
+
     background: var(--black);
+
+    padding:2rem 4rem;
+
+}
+
+.footer iframe{
+    margin-top: 10px;
 }
 
 .footer .box-container{
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+
+    /*grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));*/
+
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+
     gap:1.5rem;
+
 }
 
 .footer .box-container .box h3{
