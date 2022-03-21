@@ -1,19 +1,19 @@
-let menu = document.querySelector('#menu-bar');
-  let navbar = document.querySelector('.navbar');
+let menu = document.querySelector("#menu-bar");
+let navbar = document.querySelector(".navbar");
 
-  menu.onclick = () => {
-    menu.classList.toggle('fa-times');
-    navbar.classList.toggle('active');
-  }
+menu.onclick = () => {
+  menu.classList.toggle("fa-times");
+  navbar.classList.toggle("active");
+};
 
-  menu.onclick = () => {
-    menu.classList.toggle('fa-times');
-    navbar.classList.toggle('active');
-  } 
+menu.onclick = () => {
+  menu.classList.toggle("fa-times");
+  navbar.classList.toggle("active");
+};
 
 window.onscroll = () => {
   menu.classList.remove("fa-times");
-    navbar.classList.remove("active"); 
+  navbar.classList.remove("active");
 
   if (window.scrollY > 60) {
     document.querySelector("#scroll-top").classList.add("active");
@@ -37,7 +37,7 @@ const nextBtn = document.querySelector(".next-btn");
 const prevBtn = document.querySelector(".prev-btn");
 const slides = document.querySelectorAll(".slide");
 const slideIcons = document.querySelectorAll(".slide-icon");
-const numberOfSlides = 3;
+// const numberOfSlides = 3;
 var slideNumber = 0;
 
 nextBtn.addEventListener("click", () => {
@@ -100,15 +100,15 @@ slider.addEventListener("mouseout", () => {
 
 //nav
 navbar = document.querySelector(".menunav").querySelectorAll("a");
-  //console.log(navbar);
-  
-  navbar.forEach(Element => {
-    Element.addEventListener("click", function(){
-      navbar.forEach(nav=>nav.classList.remove("active"))
-  
-      this.classList.add("active");
-    })
-  })
+//console.log(navbar);
+
+navbar.forEach((Element) => {
+  Element.addEventListener("click", function () {
+    navbar.forEach((nav) => nav.classList.remove("active"));
+
+    this.classList.add("active");
+  });
+});
 
 //Menu Nav
 const menuNav = document.querySelector("#menunav");
@@ -189,9 +189,9 @@ menuNav.addEventListener("click", function (e) {
 /* When the user clicks on the button,
   toggle between hiding and showing the dropdown content */
 const sort = document.querySelector("#sort");
-function myFunction() {
-  sort.classList.toggle("show");
-}
+// function myFunction() {
+//   sort.classList.toggle("show");
+// }
 
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {
