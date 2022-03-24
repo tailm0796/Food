@@ -449,7 +449,6 @@ h5.modal-title {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
-    height: 400px;
 }
 .speciality .box-container .box{
     flex:1 1 30rem;
@@ -555,7 +554,7 @@ h5.modal-title {
     position: absolute;
     border-radius: 5PX;
 }
-.content{
+.content-s{
     width: 80%;
     position: absolute;
     float: right;
@@ -571,17 +570,17 @@ h5.modal-title {
     text-align: center;
     margin: 2rem 0 0 0;
 }
-.content .stars i{
+.content-s .stars i{
     color: gold;
     font-size: 20px;
     padding: 1rem .1rem;
     margin-bottom: 2rem;
 }
-.content h2{
+.content-s h2{
     font-size: 4rem;
     color: #3B3B98;
 }
-.content p{
+.content-s p{
     font-size: 2.5rem;
     font-weight: bold;
     color: #cc8e35;
@@ -702,27 +701,13 @@ h5.modal-title {
 /*footer*/
 
 .footer{
-
     background: var(--black);
-
-    padding:2rem 4rem;
-
-}
-
-.footer iframe{
-    margin-top: 10px;
 }
 
 .footer .box-container{
-
     display: grid;
-
-    /*grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));*/
-
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap:1.5rem;
-
 }
 
 .footer .box-container .box h3{
@@ -892,7 +877,7 @@ h5.modal-title {
     .slider .slide{
         width: 96%;
     }    
-    .content p{
+    .content-s p{
         font-size: 2rem;
     }
     .avatar{
@@ -913,13 +898,13 @@ h5.modal-title {
     .slider .slide{
         width: 95%;
     }
-    .content h2{
+    .content-s h2{
         font-size: 2.5rem;
     }
-    .content .stars{
+    .content-s .stars{
         font-size: 15px;
     } 
-    .content p{
+    .content-s p{
         font-size: 1.8rem;
     }
     .avatar{
