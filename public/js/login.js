@@ -8,8 +8,8 @@ const Indicator = document.querySelector('#Indicator');
       Indicator.style.transform = "translateX(100px)";
     }
     function login(){
-      Regform.style.transform = "translateX(450px)";
-      LoginForm.style.transform = "translateX(475px)";
+      Regform.style.transform = "translateX(490px)";
+      LoginForm.style.transform = "translateX(185%)";
       Indicator.style.transform = "translateX(-10px)";
     }
 //DISPLAY FORM FOR USER
@@ -29,7 +29,7 @@ const loginUser = async (email, password) => {
   try {
   const response = await axios ({
     method: 'POST',
-    url:'http://www.seoie204.me/api/user/login',
+    url:'https://www.seoie204.me/api/user/login',
     data: {
       email,
       password,
@@ -56,7 +56,7 @@ const registerUser = async (data) => {
   try {
   const response = await axios ({
     method: 'POST',
-    url:'http://www.seoie204.me/api/user/signup',
+    url:'https://www.seoie204.me/api/user/signup',
     data,
   })
   if (response.data.status === 'success'){
