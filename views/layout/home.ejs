@@ -1,17 +1,17 @@
 <title>Doreen | Đặt và giao hàng nhanh gà rán, pizza, hamburger tại Thủ Đức</title>
+<meta name=”robots” content="index, follow">
 <%- layout('./layout/template') %>
-    <link rel="canonical" href="http://localhost:3000">
     <section class="home" id="home">
         <div class="row">
             <div class="col-2">
-                <h3 style="text-align:center">Giải quyết cơn đói của bạn một cách <span>nhanh chóng!</span></h3>
+                <h3 style = "text-align:center">Giải quyết cơn đói của bạn một cách <span>nhanh chóng!</span></h3>
                 <p>Không cần đi đâu xa cũng có thể thưởng thức hamburger và
                     nhâm nhi gà rán cùng gia đình ngay tại nhà trong mùa dịch.
                     Còn chần chờ gì mà không đặt hàng ngay!!!</p>
                 <a href="/products" class="btn"><strong>Order now &#10132;</strong></a>
             </div>
             <div class="col-2">
-                <img src="/img/home-img.png" alt="burger-nhun-nhay">
+                <img src="/img/home-img.png">
             </div>
         </div>
     </section>
@@ -19,69 +19,68 @@
         <h1 class="heading"><span>Menu</span></h1>
         <div class="box-container">
             <div class="box">
-
                 <a href="/products">
-                    <img class="image" src="img/s-img-1.webp" alt="">
-                    <div class="content">
-                        <img src="img/hamburger.png" width="50px" height="50px" alt="hamburger icon">
-                        <h3>Burger</h3>
-                        <p></p>
-                    </div>
+                <img class="image" src="img/s-img-1.webp" alt="">
+                <div class="content">
+                    <img src="img/hamburger.png" width="50px" height="50px" alt="hamburger icon">
+                    <h3>Burger</h3>
+                    <p></p>
+                </div>
                 </a>
             </div>
             <div class="box">
 
                 <a href="/products">
-                    <img class="image" src="img/s-img-2.webp" alt="">
-                    <div class="content">
-                        <img src="img/pizza.png" width="50px" height="50px" alt="pizza icon">
-                        <h3>Pizza</h3>
-                        <p></p>
-                    </div>
+                <img class="image" src="img/s-img-2.webp" alt="">
+                <div class="content">
+                    <img src="img/pizza.png" width="50px" height="50px" alt="pizza icon">
+                    <h3>Pizza</h3>
+                    <p></p>
+                </div>
                 </a>
             </div>
-            <div class="box">
+            <div class="box" >
 
                 <a href="/product">
-                    <img class="image" src="img/s-img-3.webp" alt="">
+                <img class="image" src="img/s-img-3.webp" alt="">
 
-                    <div class="content">
-                        <img src="img/-ice-cream_89753.png" width="55px" height="55px" alt="icecream icon">
-                        <h3>Kem</h3>
-                        <p></p>
-                    </div>
+                <div class="content">
+                    <img src="img/-ice-cream_89753.png" width="55px" height="55px" alt="icecream icon">
+                    <h3>Kem</h3>
+                    <p></p>
+                </div>
                 </a>
             </div>
             <div class="box">
                 <a href="/products">
-                    <img class="image" src="img/g-6.jpg" alt="">
-                    <div class="content">
-                        <img src="img/fried-chicken.png" width="50px" height="50px" alt="chicken icon">
-                        <h3>Gà rán</h3>
-                        <p></p>
-                    </div>
-                </a>
-            </div>
-            <div class="box">
-
-                <a href="/products">
-                    <img class="image" src="img/s-img-4.webp" alt="">
-                    <div class="content">
-                        <img src="img/soda.png" width="50px" height="50px" alt="soda icon">
-                        <h3>Nước</h3>
-                        <p></p>
-                    </div>
+                    <img class="image" src="img/g-6.webp" alt="">
+                <div class="content">
+                    <img src="img/fried-chicken.png" width="50px" height="50px" alt="chicken icon">
+                    <h3>Gà rán</h3>
+                    <p></p>
+                </div>
                 </a>
             </div>
             <div class="box">
 
                 <a href="/products">
-                    <img class="image" src="img/s-img-5.webp" alt="">
-                    <div class="content">
-                        <img src="img/cupcake.png" width="50px" height="50px" alt="cupcake icon">
-                        <h3>Bánh</h3>
-                        <p></p>
-                    </div>
+                <img class="image" src="img/s-img-4.webp" alt="">
+                <div class="content">
+                    <img src="img/soda.png" width="50px" height="50px" alt="soda icon">
+                    <h3>Nước</h3>
+                    <p></p>
+                </div>
+                </a>
+            </div>
+            <div class="box">
+
+                <a href="/products">
+                <img class="image" src="img/s-img-5.webp" alt="">
+                <div class="content">
+                    <img src="img/cupcake.png" width="50px" height="50px" alt="cupcake icon">
+                    <h3>Bánh</h3>
+                    <p></p>
+                </div>
                 </a>
             </div>
         </div>
@@ -94,7 +93,7 @@
                     <span class="price">
                         <%= product.price.toLocaleString('it-IT', {style : 'currency' , currency : 'VND' })%>
                     </span>
-                    <a href="/product/<%= product.slug %>" alt="<%= product.slug %>">
+                    <a href="/product/<%= product.slug %>" alt="<%= product.name %>">
                         <img src="<%= product.images[0].url %> " alt="<%= product.images[0].fileName %>">
                     </a>
                     <h3>
@@ -110,15 +109,14 @@
                 <% } %>
         </div>
     </section>
-
-    <h1 class="heading"><span>Đánh giá</span></h1>
-
-    <section class="rate-us" id="rate-us">
+    
+    <h1 class="heading" id = "rate-us"><span>Đánh giá</span></h1>
+    <section class="rate-us">
         <div class="sliderHome">
             <div class="slideHome active">
-                <img class="background" src="img/background-slide1.webp" alt="bg-danh-gia-active">
+                <img class="background" src="img/background-slide1.webp">
                 <div class="content">
-                    <img class="avatar" src="img/avatar1.webp" width="280px" height="280px" alt="avt-danh-gia-active">
+                    <img class="avatar" src="img/avatar1.webp">
                     <div class="text">
                         <h2>Nguyễn Văn A</h2><br>
                         <div class="stars">
@@ -134,10 +132,9 @@
                 </div>
             </div>
             <div class="slideHome">
-                <img class="background" src="img/background-slide1.webp" alt="bg-danh-gia-depending">
+                <img class="background" src="img/background-slide1.webp">
                 <div class="content">
-                    <img class="avatar" src="img/avatar2.webp" width="280px" height="280px"
-                        alt="avt-danh-gia-depending">
+                    <img class="avatar" src="img/avatar2.webp">
                     <div class="text">
                         <h2>Trần Yến B</h2><br>
                         <div class="stars">
@@ -153,10 +150,9 @@
                 </div>
             </div>
             <div class="slideHome">
-                <img class="background" src="img/background-slide1.webp" alt="bg-danh-gia-depending">
+                <img class="background" src="img/background-slide1.webp">
                 <div class="content">
-                    <img class="avatar" src="img/avatar3.webp" width="280px" height="280px"
-                        alt="avt-danh-gia-depending">
+                    <img class="avatar" src="img/avatar3.webp">
                     <div class="text">
                         <h2>Phạm Anh C</h2><br>
                         <div class="stars">
@@ -172,10 +168,9 @@
                 </div>
             </div>
             <div class="slideHome">
-                <img class="background" src="img/background-slide1.webp" alt="bg-danh-gia-depending">
+                <img class="background" src="img/background-slide1.webp">
                 <div class="content">
-                    <img class="avatar" src="img/avatar4.webp" width="280px" height="280px"
-                        alt="avt-danh-gia-depending">
+                    <img class="avatar" src="img/avatar4.webp">
                     <div class="text">
                         <h2>Lê Minh D</h2><br>
                         <div class="stars">
@@ -191,10 +186,9 @@
                 </div>
             </div>
             <div class="slideHome">
-                <img class="background" src="img/background-slide1.webp" alt="bg-danh-gia-depending">
+                <img class="background" src="img/background-slide1.webp">
                 <div class="content">
-                    <img class="avatar" src="img/avatar5.webp" width="280px" height="280px"
-                        alt="avt-danh-gia-depending">
+                    <img class="avatar" src="img/avatar5.webp">
                     <div class="text">
                         <h2>Hà Quý E</h2><br>
                         <div class="stars">
@@ -222,19 +216,19 @@
             </div>
         </div>
     </section>
-    <h1 class="heading"><span>Về chúng tôi</span></h1>
-    <section class="about-us" id="about-us">
+    <h1 class="heading" id = "about-us"><span>Về chúng tôi</span></h1>
+    <section class="about-us">
         <img src="img/about-us.webp">
         <div class="text-abt-us">
-            <h2>Doreen Shop</h2>
+            <h2>FastFood Shop</h2>
             <br>
-            <p> Doreen Shop được thành lập tháng vào 8 năm 2021.
+            <p> FastFood Shop được thành lập tháng vào 8 năm 2021.
             </p>
             <br>
             <p>
-                Ảnh hưởng của đại dịch COVID-19, chúng tôi đã phải thay đổi hình thức kinh doanh của Doreen Shop, từ
+                Ảnh hưởng của đại dịch COVID-19, chúng tôi đã phải thay đổi hình thức kinh doanh của FastFood Shop, từ
                 offline sang <strong>online</strong>. Giữa đại dịch nguy hiểm, bạn vẫn có thể
-                thưởng thức những món ăn ngon của Doreen Shop. Chỉ cần truy cập vào website của Doreen Shop, chọn
+                thưởng thức những món ăn ngon của FastFood Shop. Chỉ cần truy cập vào website của FastFood Shop, chọn
                 những món bạn yêu thích, chỉ cần đợi trong giây lát,
                 và thế là bạn đã có thể thưởng thức các món ngon một cách ngon miệng và <strong>an toàn</strong> trong
                 mùa dịch này.
@@ -259,3 +253,7 @@
             <h3>Thưởng thức đồ ăn ngon miệng</h3>
         </div>
     </section>
+    <div id="cart">
+    <script src="/js/category.js" ></script>
+
+    </div>

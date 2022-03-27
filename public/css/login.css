@@ -2,13 +2,10 @@ input{
     text-transform: none;
 }
 .account-page{
-    padding: 50px;
+    padding: 5%;
 }
 .container{
-    max-width: 1300px;
-    margin: auto;
-    padding-left: 25px;
-    padding-right: 25px;
+    max-width: 100%;
 }
 .row{
     display: flex;
@@ -20,7 +17,6 @@ input{
 }
 .col-2 img{
     width: 100%;
-    padding: 50px 0;
     animation:float 3s linear infinite;
   }
 @keyframes float{
@@ -32,16 +28,15 @@ input{
     }
 }
 .col-2{
-    flex-basis: 50%;
-    min-width: 300px;
+    
 }
 .form-container{
     background: #ffff;
-    width: 470px;
+    width: 90%;
     height: 550px;
     position: relative;
     text-align: center;
-    padding: 30px 0;
+    padding: 5% 0;
     margin: auto;
     box-shadow: 0 0 20px 0px rgba(0,0,0,.1);
     overflow: auto;
@@ -49,7 +44,6 @@ input{
 }
 .form-container span{
     font-weight: bold;
-    padding: 0 10px;
     text-align: left 1000px;
     color: var(--black);
     cursor: pointer;
@@ -61,17 +55,15 @@ input{
     display: inline-block;
 }
 .form-container form{
-    max-width: 300px;
-    padding: 0 20px;
+    max-width: 50%;
+    padding: 0 10px;
     position: absolute;
-    top: 130px;
+    top: 2%;
     transition: transform 1s;
 }
 form input{
-    width: 150%;
+    width: 180%;
     height: 50px;
-    margin: 1px 0;
-    padding: 0 10px;
     border: none;
     border-radius: 2px;
     border-bottom: 1px solid var(--black)!important;
@@ -80,23 +72,29 @@ form .btn{
     width: 100%;
     border: 1px solid var(--black);
     cursor: pointer;
-    margin: 40px 70px;
+    margin-top: 15px;
+    margin-left: 40%;
+    margin-bottom: 5%;
 }
 form .btn:focus{
     outline: none;
-
 }
 #Loginform{
-    left: -450px;
+    left: -85%;
     top: 170px;
 }
 #Regform{
-    left: 20px;
+    left: 7%;
     top: 100px;
 }
 form a{
     font-size: 16px;
-    padding-left: 130px;
+}
+#quenkm {
+    border: none;
+}
+#quenkm:hover {
+    background-color: #fff;
 }
 #Indicator{
     width: 100px;
@@ -129,4 +127,7 @@ form a{
   }
   .alert--failed {
     background-color: #eb4d4b;
+  }
+  @media(max-width:666px) {
+      
   }
