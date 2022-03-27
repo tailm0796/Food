@@ -1,25 +1,48 @@
 <title> Doreen | Đặt hàng </title>
 <%- layout('./layout/template') %>
-    <link rel="canonical" href="http://localhost:3000/checkout">
-    <link rel="stylesheet" type="text/css" href="/css/order.css">
-    <section class="order" id="order">
-        <div>
-            <h1 class="heading"><span>Đặt Hàng</span></h1>
-        </div>
-        <div class="row">
-            <% if(user!==null) { %>
-                <form action="">
-                    <div class="inputBox">
-                        <div class="input">
-                            <span>Tên</span>
-                            <input type="text" placeholder="name" value="<%=user.username%>" name="username">
-                            <span>Email</span>
-                            <input type="email" placeholder="email" value="<%=user.email%>" name="email">
-                        </div>
-                        <div class="input">
-                            <span>Số điện thoại</span>
-                            <input type="text" placeholder="number" value="<%= user.phone %>" name="phone">
-                        </div>
+
+<link rel="canonical" href="https://seoie204.me/checkout" >
+<link rel="stylesheet" type="text/css" href="/css/order.css">
+<section class="order" id="order">
+    <div>
+        <h1 class="heading"><span>Đặt Hàng</span></h1>
+    </div>
+    <div class="row"> 
+        <% if(user!== null) { %> 
+        <form action="">
+            <div class="inputBox">
+                <div class="input">
+                    <span>Tên</span>
+                    <input type="text" placeholder="name" value="<%=user.username%>" name="username">
+                    <span>Email</span>
+                    <input type="email" placeholder="email" value= "<%=user.email%>" name="email">
+                </div>
+                <div class="input">
+                    <span>Số điện thoại</span>
+                    <input type="text" placeholder="number" value= "<%= user.phone %>" name="phone">
+                </div>  
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <span>Địa chỉ</span>
+                    <textarea placeholder="address" name="address" id="" cols="30" rows="10" ><%= user.address %> </textarea>
+                </div>
+                <div class="input">
+                    <span>Message</span>
+                    <textarea placeholder="" name="message" id="" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+        </form>
+        <% } %> 
+        <form action="">
+            <div id="myModal" class="inputBox">
+                <div class="modal-body">
+                    <span>Đơn Hàng Của Bạn</span>
+                    <div class="cart-row">
+                        <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+                        <span class="cart-price cart-header cart-column">Giá</span>
+                        <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+
                     </div>
                     <div class="inputBox">
                         <div class="input">

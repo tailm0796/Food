@@ -1,12 +1,27 @@
 <title> Doreen | <%= product.name %>
 </title>
 <%- layout('./layout/template') %>
-  <link rel="canonical" href="http://localhost:3000/product/<%= product.slug %>">
-  <link rel="stylesheet" type="text/css" href="/css/productDetail.css" />
-  <div class="product-page">
-    <div class="product-container">
-      <div class="field-back">
-        <a href="http://localhost:3000/products"><button class="btn-back" title="Quay lại">← Quay lại</button></a>
+
+<link rel="canonical" href="https://seoie204.me/product/<%= product.slug %>" >
+<link rel="stylesheet" type="text/css" href="/css/productDetail.css" />
+<div class="product-page">
+  <div class="product-container">
+    <div class="field-back">
+      <a href="http://localhost:3000/products"
+        ><button class="btn-back" title="Quay lại">← Quay lại</button></a
+      >
+    </div>
+    <div class="product-category-detail">
+      <div class="field-img">
+        <div class="item">
+          <img id="main-img" src="<%= product.images[0].url %>" alt="<%= product.slug %>" />
+        </div>
+        <p class="thumbBar">
+          <% for (let img of product.images) {%> 
+          <img src="<%= img.url %>" alt="<%= product.slug %>" />
+          <% } %> 
+        </p>
+
       </div>
       <div class="product-category-detail">
         <div class="field-img">
