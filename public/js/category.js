@@ -136,7 +136,7 @@ const getCategory = async (id) => {
   try {
     const response = await axios({
       method: "GET",
-      url: `http://localhost:3000/api/category/${id}`,
+      url: `https://www.seoie204.me/api/category/${id}`,
     });
     if (response.data.status === "success") {
       for (let product of response.data.data.products) {
@@ -151,7 +151,7 @@ const getAllProduct = async () => {
   try {
     const response = await axios({
       method: "GET",
-      url: `http://localhost:3000/api/product/`,
+      url: `https://www.seoie204.me/api/product/`,
     });
     if (response.data.status === "success") {
       for (let product of response.data.data) {
