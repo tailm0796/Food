@@ -1,3 +1,5 @@
+<title> Doreen | <%= product.name %> </title>
+<meta name=”robots” content="noindex, follow">
 <%- layout('./layout/template') %>
 <link rel="stylesheet" type="text/css" href="/css/productDetail.css" />
 <div class="product-page">
@@ -54,4 +56,5 @@
   const description = document.querySelector('.field-text p').textContent;
   fieldText.innerHTML = description.replace(/%d/g, '<br> <br>')
 </script>
+<script src="/js/category.js" ></script>
 
