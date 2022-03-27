@@ -1,6 +1,6 @@
 <title>Doreen | Đặt và giao hàng nhanh gà rán, pizza, hamburger tại Thủ Đức</title>
-<meta name=”robots” content="index, follow">
 <%- layout('./layout/template') %>
+<link rel="canonical" href="http://localhost:3000" >
     <section class="home" id="home">
         <div class="row">
             <div class="col-2">
@@ -11,7 +11,7 @@
                 <a href="/products" class="btn"><strong>Order now &#10132;</strong></a>
             </div>
             <div class="col-2">
-                <img src="/img/home-img.png">
+                <img src="/img/home-img.png" alt = "burger-nhun-nhay">
             </div>
         </div>
     </section>
@@ -94,7 +94,7 @@
                     <span class="price">
                         <%= product.price.toLocaleString('it-IT', {style : 'currency' , currency : 'VND' })%>
                     </span>
-                    <a href="/product/<%= product.slug %>" alt="<%= product.name %>">
+                    <a href="/product/<%= product.slug %>" alt="<%= product.slug %>">
                         <img src="<%= product.images[0].url %> " alt="<%= product.images[0].fileName %>">
                     </a>
                     <h3>
@@ -116,9 +116,9 @@
     <section class="rate-us" id="rate-us">
         <div class="sliderHome">
             <div class="slideHome active">
-                <img class="background" src="img/background-slide1.webp">
+                <img class="background" src="img/background-slide1.webp" alt="bg-danh-gia-active">
                 <div class="content">
-                    <img class="avatar" src="img/avatar1.webp" width="280px" height="280px">
+                    <img class="avatar" src="img/avatar1.webp" width="280px" height="280px" alt="avt-danh-gia-active">
                     <div class="text">
                         <h2>Nguyễn Văn A</h2><br>
                         <div class="stars">
@@ -134,9 +134,9 @@
                 </div>
             </div>
             <div class="slideHome">
-                <img class="background" src="img/background-slide1.webp">
+                <img class="background" src="img/background-slide1.webp"  alt="bg-danh-gia-depending">
                 <div class="content">
-                    <img class="avatar" src="img/avatar2.webp" width="280px" height="280px">
+                    <img class="avatar" src="img/avatar2.webp" width="280px" height="280px"  alt="avt-danh-gia-depending">
                     <div class="text">
                         <h2>Trần Yến B</h2><br>
                         <div class="stars">
@@ -152,9 +152,9 @@
                 </div>
             </div>
             <div class="slideHome">
-                <img class="background" src="img/background-slide1.webp">
+                <img class="background" src="img/background-slide1.webp"  alt="bg-danh-gia-depending">
                 <div class="content">
-                    <img class="avatar" src="img/avatar3.webp" width="280px" height="280px">
+                    <img class="avatar" src="img/avatar3.webp" width="280px" height="280px" alt="avt-danh-gia-depending">
                     <div class="text">
                         <h2>Phạm Anh C</h2><br>
                         <div class="stars">
@@ -170,9 +170,9 @@
                 </div>
             </div>
             <div class="slideHome">
-                <img class="background" src="img/background-slide1.webp">
+                <img class="background" src="img/background-slide1.webp"  alt="bg-danh-gia-depending">
                 <div class="content">
-                    <img class="avatar" src="img/avatar4.webp" width="280px" height="280px">
+                    <img class="avatar" src="img/avatar4.webp" width="280px" height="280px" alt="avt-danh-gia-depending">
                     <div class="text">
                         <h2>Lê Minh D</h2><br>
                         <div class="stars">
@@ -188,9 +188,9 @@
                 </div>
             </div>
             <div class="slideHome">
-                <img class="background" src="img/background-slide1.webp">
+                <img class="background" src="img/background-slide1.webp"  alt="bg-danh-gia-depending">
                 <div class="content">
-                    <img class="avatar" src="img/avatar5.webp" width="280px" height="280px">
+                    <img class="avatar" src="img/avatar5.webp" width="280px" height="280px" alt="avt-danh-gia-depending">
                     <div class="text">
                         <h2>Hà Quý E</h2><br>
                         <div class="stars">
@@ -222,15 +222,15 @@
     <section class="about-us" id="about-us">
         <img src="img/about-us.webp">
         <div class="text-abt-us">
-            <h2>FastFood Shop</h2>
+            <h2>Doreen Shop</h2>
             <br>
-            <p> FastFood Shop được thành lập tháng vào 8 năm 2021.
+            <p> Doreen Shop được thành lập tháng vào 8 năm 2021.
             </p>
             <br>
             <p>
-                Ảnh hưởng của đại dịch COVID-19, chúng tôi đã phải thay đổi hình thức kinh doanh của FastFood Shop, từ
+                Ảnh hưởng của đại dịch COVID-19, chúng tôi đã phải thay đổi hình thức kinh doanh của Doreen Shop, từ
                 offline sang <strong>online</strong>. Giữa đại dịch nguy hiểm, bạn vẫn có thể
-                thưởng thức những món ăn ngon của FastFood Shop. Chỉ cần truy cập vào website của FastFood Shop, chọn
+                thưởng thức những món ăn ngon của Doreen Shop. Chỉ cần truy cập vào website của Doreen Shop, chọn
                 những món bạn yêu thích, chỉ cần đợi trong giây lát,
                 và thế là bạn đã có thể thưởng thức các món ngon một cách ngon miệng và <strong>an toàn</strong> trong
                 mùa dịch này.
@@ -255,6 +255,3 @@
             <h3>Thưởng thức đồ ăn ngon miệng</h3>
         </div>
     </section>
-    <div id="cart">
-
-    </div>
