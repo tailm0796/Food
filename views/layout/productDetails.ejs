@@ -1,7 +1,7 @@
-<title> Doreen | <%= product.name %> </title>
 <%- layout('./layout/template') %>
-<link rel="canonical" href="https://seoie204.me/product/<%= product.slug %>" >
+<title>Doreen | <%= product.name %></title>
 <link rel="stylesheet" type="text/css" href="/css/productDetail.css" />
+<link rel="canonical" href="https://seoie204.me/product/<%= product.slug %>" />
 <div class="product-page">
   <div class="product-container">
     <div class="field-back">
@@ -12,12 +12,16 @@
     <div class="product-category-detail">
       <div class="field-img">
         <div class="item">
-          <img id="main-img" src="<%= product.images[0].url %>" alt="<%= product.slug %>" />
+          <img
+            id="main-img"
+            src="<%= product.images[0].url %>"
+            alt="<%= product.slug %>"
+          />
         </div>
         <p class="thumbBar">
-          <% for (let img of product.images) {%> 
+          <% for (let img of product.images) {%>
           <img src="<%= img.url %>" alt="<%= product.slug %>" />
-          <% } %> 
+          <% } %>
         </p>
       </div>
       <div class="field-content">
@@ -25,12 +29,15 @@
           <ul class="breadcrumb">
             <li><a href="http://localhost:3000">Trang chủ</a></li>
             <li><a href="http://localhost:3000/products">Menu</a></li>
-            <li><%= product.name %> </li>
+            <li><%= product.name %></li>
           </ul>
         </div>
-        <h2 style="margin-top:16px"><%= product.name %></h2>
+        <h2 style="margin-top: 16px"><%= product.name %></h2>
         <div class="field-price">
-          <span><%= new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product.price) %> </span>
+          <span
+            ><%= new Intl.NumberFormat('vi-VN', { style: 'currency', currency:
+            'VND' }).format(product.price) %>
+          </span>
         </div>
         <div class="field-note">
           <div class="field-text">
@@ -46,14 +53,13 @@
 </div>
 <script>
   //Change Images
-  const thumbBar = document.querySelector('.thumbBar')
-  const mainImg = document.querySelector('#main-img')
+  const thumbBar = document.querySelector('.thumbBar');
+  const mainImg = document.querySelector('#main-img');
   thumbBar.addEventListener('click', function (e) {
     mainImg.src = e.target.src;
-  })
+  });
   //Change text description
   const fieldText = document.querySelector('.field-text p');
   const description = document.querySelector('.field-text p').textContent;
-  fieldText.innerHTML = description.replace(/%d/g, '<br> <br>')
+  fieldText.innerHTML = description.replace(/%d/g, '<br> <br>');
 </script>
-
