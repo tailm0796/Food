@@ -94,7 +94,8 @@
                     <span class="price">
                         <%= product.price.toLocaleString('it-IT', {style : 'currency' , currency : 'VND' })%>
                     </span>
-                    <a href="/product/<%= product.slug %>" alt="<%= product.slug %>">
+                    <!--<a href="/product/<%= product.slug %>" alt="<%= product.slug %>">-->
+                    <a href="/product/<%= product.slug %>">
                         <img src="<%= product.images[0].url %> " alt="<%= product.images[0].fileName %>">
                     </a>
                     <h3>
@@ -220,7 +221,7 @@
     </section>
     <h1 class="heading"><span>Về chúng tôi</span></h1>
     <section class="about-us" id="about-us">
-            <img src="img/about-us.webp">
+            <img src="img/about-us.webp" alt="about-us-image">
             <div class="text-abt-us">
                 <h2>Doreen Shop</h2>
                 <br>
