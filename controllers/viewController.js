@@ -43,3 +43,6 @@ module.exports.products = catchAsync(async(req, res) => {
   const categories = await Category.find().select('_id , name');
   res.render('layout/category', {products,categories});
 })
+module.exports.blog = (req , res) => {
+  res.render('layout/blog');
+}
