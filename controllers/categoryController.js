@@ -1,10 +1,10 @@
-const Category = require("../models/categoryModel");
-const catchAsync = require("../utils/catchAsync");
-const AppError = require("../utils/appError");
+const Category = require('../models/categoryModel');
+const catchAsync = require('../utils/catchAsync');
+const AppError = require('../utils/appError');
 module.exports.getAllCategory = catchAsync(async (req, res) => {
   const categories = await Category.find();
   res.status(200).json({
-    status: "success",
+    status: 'success',
     results: categories.length,
     data: categories,
   });
@@ -12,17 +12,17 @@ module.exports.getAllCategory = catchAsync(async (req, res) => {
 module.exports.creatNewCategory = catchAsync(async (req, res) => {
   const category = await Category.create(req.body);
   res.status(200).json({
-    status: "success",
+    status: 'success',
     data: category,
   });
 });
 module.exports.getCategory = catchAsync(async (req, res, next) => {
-  const category = await Category.findById(req.params.id).populate("products");
+  const category = await Category.findById(req.params.id).populate('products');
   if (!category) {
     return next(new AppError("Can't not found document with this ID"), 400);
   }
   res.status(200).json({
-    status: "success",
+    status: 'success',
     data: category,
   });
 });
@@ -35,7 +35,7 @@ module.exports.updateCategory = catchAsync(async (req, res, next) => {
     return next(new AppError("Can't not found document with this ID"), 400);
   }
   res.status(200).json({
-    status: "success",
+    status: 'success',
     data: category,
   });
 });

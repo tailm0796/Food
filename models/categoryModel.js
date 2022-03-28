@@ -1,10 +1,10 @@
-const mongoose = require("mongoose");
-const slugify = require("slugify");
+const mongoose = require('mongoose');
+const slugify = require('slugify');
 
 const categorySchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, "Please provide name of category"],
+    required: [true, 'Please provide name of category'],
   },
   image: {
     type: String,
@@ -20,9 +20,9 @@ const categorySchema = new mongoose.Schema({
   products: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Product",
+      ref: 'Product',
     },
   ],
 });
-const Category = mongoose.model("Category", categorySchema);
+const Category = mongoose.model('Category', categorySchema);
 module.exports = Category;

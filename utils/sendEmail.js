@@ -1,5 +1,5 @@
-const nodemailer = require("nodemailer");
-const ejs = require("ejs");
+const nodemailer = require('nodemailer');
+const ejs = require('ejs');
 //const htmlToText = require('html-to-text');
 
 module.exports = class Email {
@@ -10,7 +10,7 @@ module.exports = class Email {
     this.url = url;
     this.data = data;
     //this.from = process.env.SENDGRID_EMAIL_FROM;
-    this.from = "sonnguyen@gmail.com";
+    this.from = 'sonnguyen@gmail.com';
   }
   newTransporter() {
     //sendgrid
@@ -20,7 +20,7 @@ module.exports = class Email {
         user: process.env.SENDGRID_USERNAME,
         pass: process.env.SENDGRID_PASSWORD,
       }, */
-      host: "smtp.mailtrap.io",
+      host: 'smtp.mailtrap.io',
       port: 2525,
       auth: {
         user: process.env.MAILTRAP_USER,
@@ -50,6 +50,6 @@ module.exports = class Email {
   }
 
   async sendMail() {
-    await this.send("Order Successfully");
+    await this.send('Order Successfully');
   }
 };

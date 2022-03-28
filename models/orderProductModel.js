@@ -1,13 +1,13 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const orderProductModel = new mongoose.Schema({
   order: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Order",
+    ref: 'Order',
   },
   product: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Product",
+    ref: 'Product',
   },
   qty: {
     type: Number,
@@ -19,8 +19,8 @@ const orderProductModel = new mongoose.Schema({
   },
 });
 orderProductModel.pre(/^find/, function (next) {
-  this.populate("product");
+  this.populate('product');
   next();
 });
-const OrderProduct = mongoose.model("OrderProduct", orderProductModel);
+const OrderProduct = mongoose.model('OrderProduct', orderProductModel);
 module.exports = OrderProduct;

@@ -1,13 +1,13 @@
-const Category = require("../models/categoryModel");
-const Product = require("../models/productModel");
-const User = require("../models/userModel");
-const Order = require("../models/orderModel");
-const OrderProduct = require("../models/orderProductModel");
-const catchAsync = require("../utils/catchAsync");
-const Cart = require("../cart");
-const AppError = require("../utils/appError");
-const Email = require("../utils/sendEmail");
-const { cloudinary } = require("../cloudinary");
+const Category = require('../models/categoryModel');
+const Product = require('../models/productModel');
+const User = require('../models/userModel');
+const Order = require('../models/orderModel');
+const OrderProduct = require('../models/orderProductModel');
+const catchAsync = require('../utils/catchAsync');
+const Cart = require('../cart');
+const AppError = require('../utils/appError');
+const Email = require('../utils/sendEmail');
+const { cloudinary } = require('../cloudinary');
 module.exports.createNewProduct = catchAsync(async (req, res) => {
   let idCategory;
   if (req.params.categoryID) idCategory = req.params.categoryID;
@@ -32,12 +32,12 @@ module.exports.createNewProduct = catchAsync(async (req, res) => {
     status: 'success',
     data: product,
   }) */
-  res.redirect("/admin/dashboard");
+  res.redirect('/admin/dashboard');
 });
 module.exports.getAllProduct = catchAsync(async (req, res) => {
   const products = await Product.find();
   res.status(200).json({
-    status: "success",
+    status: 'success',
     result: products.length,
     data: products,
   });
@@ -48,7 +48,7 @@ module.exports.getProduct = catchAsync(async (req, res, next) => {
     return next(new AppError("Can't not found this product with this ID"), 400);
   }
   res.status(200).json({
-    status: "success",
+    status: 'success',
     data: product,
   });
 });
@@ -83,7 +83,7 @@ module.exports.updateProduct = catchAsync(async (req, res, next) => {
     status: 'success',
     data: updatedProduct,
   }); */
-  res.redirect("/admin/dashboard");
+  res.redirect('/admin/dashboard');
 });
 module.exports.deleteProduct = catchAsync(async (req, res, next) => {
   const product = await Product.findById(req.params.id);
@@ -95,8 +95,8 @@ module.exports.deleteProduct = catchAsync(async (req, res, next) => {
   }
   await product.findByIdAndDelete(id);
   res.status(200).json({
-    status: "success",
-    message: "Delete success",
+    status: 'success',
+    message: 'Delete success',
   });
 });
 module.exports.addCart = catchAsync(async (req, res) => {
@@ -106,7 +106,7 @@ module.exports.addCart = catchAsync(async (req, res) => {
   cart.addtoCart(product, id);
   req.session.cart = cart;
   res.locals.cart = cart;
-  res.render("cart/index");
+  res.render('cart/index');
 });
 module.exports.deleteItem = (req, res) => {
   const { id } = req.params;
@@ -116,10 +116,10 @@ module.exports.deleteItem = (req, res) => {
   res.locals.cart = cart;
   if (cart.listProduct.length <= 0) {
     req.session.destroy();
-    res.clearCookie("session");
+    res.clearCookie('session');
     res.locals.cart = undefined;
   }
-  res.render("cart/index");
+  res.render('cart/index');
 };
 module.exports.editQtyItem = (req, res) => {
   const { id } = req.params;
@@ -128,7 +128,7 @@ module.exports.editQtyItem = (req, res) => {
   cart.editQtyItem(id, qty);
   req.session.cart = cart;
   res.locals.cart = cart;
-  res.render("cart/index");
+  res.render('cart/index');
 };
 module.exports.order = catchAsync(async (req, res) => {
   const { email, phone, address, message, date } = req.body;
@@ -153,24 +153,24 @@ module.exports.order = catchAsync(async (req, res) => {
     await orderProduct.save();
   });
   try {
-    const url = "http://www.seoie204.me/";
+    const url = 'http://www.seoie204.me/';
     const data = req.session.cart;
     const sendEmail = new Email(user, url, data);
     await sendEmail.sendMail();
   } catch (err) {
     console.log(err);
   }
-  res.clearCookie("session");
+  res.clearCookie('session');
   res.status(200).json({
-    status: "success",
-    message: "Order successfuly",
+    status: 'success',
+    message: 'Order successfuly',
   });
 });
 module.exports.bestSeller = catchAsync(async (req, res) => {
   const bestSeller = await OrderProduct.aggregate()
     .group({
-      _id: "$product",
-      sumQty: { $sum: "$qty" },
+      _id: '$product',
+      sumQty: { $sum: '$qty' },
     })
     .sort({ sumQty: -1 })
     .limit(5);

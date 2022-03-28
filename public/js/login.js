@@ -1,5 +1,5 @@
-const LoginForm = document.querySelector("#Loginform");
-const Regform = document.querySelector("#Regform");
+const LoginForm = document.querySelector('#Loginform');
+const Regform = document.querySelector('#Regform');
 // const Indicator = document.querySelector("#Indicator");
 // function register() {
 //   Regform.style.transform = "translateX(0px)";
@@ -14,37 +14,37 @@ const Regform = document.querySelector("#Regform");
 //DISPLAY FORM FOR USER
 // ALERT ///
 const hideAlert = () => {
-  const el = document.querySelector(".alert");
+  const el = document.querySelector('.alert');
   if (el) el.parentElement.removeChild(el);
 };
 const showAlert = (type, message) => {
   hideAlert();
   const markup = `<div class="alert alert--${type}">${message}</div>`;
-  document.querySelector("body").insertAdjacentHTML("afterbegin", markup);
+  document.querySelector('body').insertAdjacentHTML('afterbegin', markup);
   window.setTimeout(hideAlert, 3000);
 };
 // HANDLE FORM
 const loginUser = async (email, password) => {
   try {
     const response = await axios({
-      method: "POST",
-      url: "http://www.seoie204.me/api/user/login",
+      method: 'POST',
+      url: 'http://www.seoie204.me/api/user/login',
       data: {
         email,
         password,
       },
     });
-    if (response.data.status === "success") {
-      showAlert("success", "Login Successfully");
+    if (response.data.status === 'success') {
+      showAlert('success', 'Login Successfully');
       window.setTimeout(() => {
-        location.assign("/home");
+        location.assign('/home');
       }, 1000);
     }
   } catch (err) {
-    showAlert("failed", err.response.data.message);
+    showAlert('failed', err.response.data.message);
   }
 };
-LoginForm.addEventListener("submit", (e) => {
+LoginForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const email = e.target.querySelector('input[name="email"]').value;
   const password = e.target.querySelector('input[name="password"]').value;
@@ -54,21 +54,21 @@ LoginForm.addEventListener("submit", (e) => {
 const registerUser = async (data) => {
   try {
     const response = await axios({
-      method: "POST",
-      url: "http://www.seoie204.me/api/user/signup",
+      method: 'POST',
+      url: 'http://www.seoie204.me/api/user/signup',
       data,
     });
-    if (response.data.status === "success") {
-      showAlert("success", "Register Successfully");
+    if (response.data.status === 'success') {
+      showAlert('success', 'Register Successfully');
       window.setTimeout(() => {
-        location.assign("/home");
+        location.assign('/home');
       }, 1000);
     }
   } catch (err) {
-    showAlert("failed", err.response.data.message);
+    showAlert('failed', err.response.data.message);
   }
 };
-Regform.addEventListener("submit", (e) => {
+Regform.addEventListener('submit', (e) => {
   e.preventDefault();
   const username = e.target.querySelector('input[name="username"]').value;
   const email = e.target.querySelector('input[name="email"]').value;

@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const slugify = require("slugify");
+const mongoose = require('mongoose');
+const slugify = require('slugify');
 const imageSchema = new mongoose.Schema({
   url: {
     type: String,
@@ -38,5 +38,5 @@ const productSchema = new mongoose.Schema({
   },
   images: [imageSchema],
 });
-const Product = mongoose.model("Product", productSchema);
+const Product = mongoose.model('Product', productSchema);
 module.exports = Product;

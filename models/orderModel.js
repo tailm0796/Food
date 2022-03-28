@@ -1,13 +1,13 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const orderModel = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+    ref: 'User',
   },
   message: {
     type: String,
-    default: "No message",
+    default: 'No message',
     required: true,
   },
   phone: {
@@ -20,16 +20,16 @@ const orderModel = new mongoose.Schema({
   },
   totalPrice: {
     type: Number,
-    required: [true, "Please provide name of category"],
+    required: [true, 'Please provide name of category'],
   },
   totalQty: {
     type: Number,
-    required: [true, "Please provide name of category"],
+    required: [true, 'Please provide name of category'],
   },
   date: {
     type: Date,
     default: Date.now,
   },
 });
-const Order = mongoose.model("Order", orderModel);
+const Order = mongoose.model('Order', orderModel);
 module.exports = Order;
