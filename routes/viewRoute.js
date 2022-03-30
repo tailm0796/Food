@@ -12,12 +12,8 @@ router.get(
     res.render('checkout', { title: 'Checkout' });
   }
 );
-router.get('/products', viewController.products, function (req, res) {
-  res.render('category', { title: 'Products' });
-});
-router.get('/', viewController.home, function (req, res) {
-  res.render('home', { title: 'Home' });
-});
+router.get('/products', viewController.products);
+router.get('/', viewController.home);
 router.get('/product/:slug', viewController.details, function (req, res) {
   res.render('productDetails', { title: 'Product Detail' });
 });

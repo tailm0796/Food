@@ -9,7 +9,9 @@ const upload = multer({ storage });
 router.get('/bestSeller', productController.bestSeller);
 router
   .route('/')
-  .get(productController.getAllProduct)
+  .get(productController.getAllProduct, function (req, res) {
+    res.render('category', { title: 'Products' });
+  })
   .post(upload.array('images'), productController.createNewProduct);
 //cai dat multer thi moi co req.files
 router
