@@ -19,17 +19,16 @@ module.exports.home = catchAsync(async (req, res) => {
   );
   res.render('layout/home', { products, title: 'Doreen | Trang chủ' });
 });
-module.exports.signupForm = (req, res) => {
+module.exports.signupForm = catchAsync(async (req, res) => {
   res.render('users/registerForm', { title: 'Doreen | Đăng ký' });
-};
-module.exports.loginForm = (req, res) => {
+});
+module.exports.loginForm = catchAsync(async (req, res) => {
   res.render('users/loginForm', { title: 'Doreen | Đăng nhập' });
-};
+});
 module.exports.createProductForm = catchAsync(async (req, res) => {
   const categories = await Category.find();
   res.render('products/productForm', {
     categories,
-    title: 'Doreen | Thực đơn',
   });
 });
 module.exports.details = catchAsync(async (req, res) => {
@@ -50,6 +49,7 @@ module.exports.products = catchAsync(async (req, res) => {
   res.render('layout/category', {
     products,
     categories,
+    title: 'Doreen | Thực đơn',
   });
 });
 module.exports.blog = (req, res) => {
