@@ -10,7 +10,7 @@ router.get('/bestSeller', productController.bestSeller);
 router
   .route('/')
   .get(productController.getAllProduct, function (req, res) {
-    res.render('category', { title: 'Products' });
+    res.render('category', { title: 'Doreen | Thực đơn' });
   })
   .post(upload.array('images'), productController.createNewProduct);
 //cai dat multer thi moi co req.files
