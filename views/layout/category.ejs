@@ -1,7 +1,8 @@
 <title> Doreen | Thực đơn </title>
+<meta name=”robots” content="index, follow">
 <%- layout('./layout/template') %>
-<link rel="canonical" href="https://seoie204.me/products" >
 <link rel="stylesheet" type="text/css" href="/css/category.css">
+<div class = "theproductpage">
 <div class="slider">
     <div class="slide active">
         <img src="/img/banner/banner1.png" alt="">
@@ -28,18 +29,18 @@
       <div class ="category" data-id = '<%= category.id %>'><%= category.name %></div>
     <% } %> 
 </nav>
-<div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Phân Loại</button>
-    <div id="sort" class="dropdown-content">
-        <div class ="sortAlpha" data-sort="1">A->Z</div>
-        <div class ="sortAlpha" data-sort="-1">Z->A</div>
-        <div data-min="0" data-max="50000">~50.000Đ</div>
-        <div data-min="50000" data-max="100000">50.000Đ - 100.000Đ</div>
-        <div data-min ="100000" data-max="200000">100.000Đ - 200.000Đ</div>
-    </div>
-</div>
-<hr style="height:1px;border-width:0;color:gray;background-color:gray">
 <section class="dishes" id="dishes">
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Phân Loại</button>
+        <div id="sort" class="dropdown-content">
+            <div class ="sortAlpha" data-sort="1">A->Z</div>
+            <div class ="sortAlpha" data-sort="-1">Z->A</div>
+            <div data-min="0" data-max="50000">~50.000Đ</div>
+            <div data-min="50000" data-max="100000">50.000Đ - 100.000Đ</div>
+            <div data-min ="100000" data-max="200000">100.000Đ - 200.000Đ</div>
+        </div>
+    </div>
+    <hr style="height:1px;border-width:0;color:gray;background-color:gray">
     <div class="box-container">
         <%  for (let product of products) { %> 
         <div class="box">
@@ -58,6 +59,7 @@
             <button class="btn" onclick="addCart('<%= product.id%>')">đặt hàng ngay</button>
         </div>
         <% } %> 
-    <div>
+    </div>
 </section>
+</div>
 <script src="/js/category.js" ></script>
