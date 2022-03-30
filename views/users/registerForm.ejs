@@ -1,38 +1,62 @@
-<title> Doreen | Thành viên </title>
 <%- layout('./layout/template') %>
-<link rel="stylesheet" type="text/css" href="/css/login.css">
-<link rel="canonical" href="https://seoie204.me/signup">
+<link rel="stylesheet" type="text/css" href="/css/login.css" />
+<link rel="canonical" href="https://seoie204.me/signup" />
 <div class="account-page">
-    <div class="container">
-        <div class="row">
-            <div class="col-2">
-                <img src="img/home-img.png" width="100%">
-            </div>
-            <div class="col-2">
-                <div class="form-container">
-                    <div class="form-btn">
-                        <span onclick="login()" style="text-align: left;">Login</span>
-                        <span onclick="register()">Register</span>
-                        <hr id="Indicator">
-                    </div>
-                    <form id="Loginform">
-                        <input type="text" placeholder="Email" name="email" required>
-                        <input type="password" placeholder="Mật khẩu" name="password" required>
-                        <button type="submit" class="btn">Đăng nhập</button>
-                        <a href="">Quên mật khẩu</a>
-                    </form>
-                    <form id="Regform">
-                        <input type="text" placeholder="Tên đăng nhập" name="username" required>
-                        <input type="text" placeholder="Email" name="email" required>
-                        <input type="password" placeholder="Mật khẩu" name="password" required>
-                        <input type="password" placeholder="Nhập lại mật khẩu" name="confirmPassword" required>
-                        <input type="text" placeholder="Số điện thoại" name ="phone" required>
-                        <input type="text" placeholder="Địa chỉ" name="address" required>
-                        <button type="submit" class="btn">Đăng kí</button>
-                    </form>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-2">
+        <img src="img/home-img.png" width="100%" />
+      </div>
+      <div class="col-2">
+        <div class="form-container">
+          <div class="form-btn">
+            <span onclick="login()" style="text-align: left">Login</span>
+            <span onclick="register()">Register</span>
+            <hr id="Indicator" />
+          </div>
+          <form id="Loginform">
+            <input type="text" placeholder="Email" name="email" required />
+            <input
+              type="password"
+              placeholder="Mật khẩu"
+              name="password"
+              required
+            />
+            <button type="submit" class="btn">Đăng nhập</button>
+            <a href="">Quên mật khẩu</a>
+          </form>
+          <form id="Regform">
+            <input
+              type="text"
+              placeholder="Tên đăng nhập"
+              name="username"
+              required
+            />
+            <input type="text" placeholder="Email" name="email" required />
+            <input
+              type="password"
+              placeholder="Mật khẩu"
+              name="password"
+              required
+            />
+            <input
+              type="password"
+              placeholder="Nhập lại mật khẩu"
+              name="confirmPassword"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Số điện thoại"
+              name="phone"
+              required
+            />
+            <input type="text" placeholder="Địa chỉ" name="address" required />
+            <button type="submit" class="btn">Đăng kí</button>
+          </form>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 <script src="/js/login.js"></script>
