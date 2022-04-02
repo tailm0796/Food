@@ -1,15 +1,15 @@
 const LoginForm = document.querySelector('#Loginform');
 const Regform = document.querySelector('#Regform');
-// const Indicator = document.querySelector("#Indicator");
+// const Indicator = document.querySelector('#Indicator');
 // function register() {
-//   Regform.style.transform = "translateX(0px)";
-//   LoginForm.style.transform = "translateX(0px)";
-//   Indicator.style.transform = "translateX(100px)";
+//   Regform.style.transform = 'translateX(0px)';
+//   LoginForm.style.transform = 'translateX(0px)';
+//   Indicator.style.transform = 'translateX(100px)';
 // }
 // function login() {
-//   Regform.style.transform = "translateX(450px)";
-//   LoginForm.style.transform = "translateX(475px)";
-//   Indicator.style.transform = "translateX(-10px)";
+//   Regform.style.transform = 'translateX(450px)';
+//   LoginForm.style.transform = 'translateX(475px)';
+//   Indicator.style.transform = 'translateX(-10px)';
 // }
 //DISPLAY FORM FOR USER
 // ALERT ///
@@ -37,7 +37,7 @@ const loginUser = async (email, password) => {
     if (response.data.status === 'success') {
       showAlert('success', 'Login Successfully');
       window.setTimeout(() => {
-        location.assign('/');
+        location.assign('/home');
       }, 1000);
     }
   } catch (err) {

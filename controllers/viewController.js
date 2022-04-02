@@ -23,18 +23,18 @@ module.exports.home = catchAsync(async (req, res) => {
     page: '',
   });
 });
-module.exports.signupForm = catchAsync(async (req, res) => {
+module.exports.signupForm = (req, res) => {
   res.render('users/registerForm', {
     title: 'Doreen | Đăng ký',
     page: '/signup',
   });
-});
-module.exports.loginForm = catchAsync(async (req, res) => {
+};
+module.exports.loginForm = (req, res) => {
   res.render('users/loginForm', {
     title: 'Doreen | Đăng nhập',
     page: '/signup',
   });
-});
+};
 module.exports.createProductForm = catchAsync(async (req, res) => {
   const categories = await Category.find();
   res.render('products/productForm', {
@@ -49,14 +49,14 @@ module.exports.details = catchAsync(async (req, res) => {
     page: '/product/:slug',
   });
 });
-module.exports.checkLogin = catchAsync(async (req, res, next) => {
+module.exports.checkLogin = (req, res, next) => {
   if (!req.user)
     return res.redirect('/signup', {
       title: 'Doreen | Đăng ký/Đăng nhập',
       page: '/signup',
     });
   next();
-});
+};
 module.exports.checkout = (req, res) => {
   res.render('layout/checkout', {
     title: 'Doreen | Đặt hàng',
