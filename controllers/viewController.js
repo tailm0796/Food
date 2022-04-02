@@ -17,13 +17,23 @@ module.exports.home = catchAsync(async (req, res) => {
       return product;
     })
   );
-  res.render('layout/home', { products, title: 'Doreen | Trang chủ' });
+  res.render('layout/home', {
+    products,
+    title: 'Doreen | Trang chủ',
+    page: '',
+  });
 });
 module.exports.signupForm = catchAsync(async (req, res) => {
-  res.render('users/registerForm', { title: 'Doreen | Đăng ký' });
+  res.render('users/registerForm', {
+    title: 'Doreen | Đăng ký',
+    page: '/signup',
+  });
 });
 module.exports.loginForm = catchAsync(async (req, res) => {
-  res.render('users/loginForm', { title: 'Doreen | Đăng nhập' });
+  res.render('users/loginForm', {
+    title: 'Doreen | Đăng nhập',
+    page: '/signup',
+  });
 });
 module.exports.createProductForm = catchAsync(async (req, res) => {
   const categories = await Category.find();
@@ -33,15 +43,25 @@ module.exports.createProductForm = catchAsync(async (req, res) => {
 });
 module.exports.details = catchAsync(async (req, res) => {
   const product = await Product.findOne({ slug: req.params.slug });
-  res.render('layout/productDetails', { product, title: 'Doreen | Chi tiết' });
+  res.render('layout/productDetails', {
+    product,
+    title: 'Doreen | Chi tiết',
+    page: '/product/:slug',
+  });
 });
 module.exports.checkLogin = catchAsync(async (req, res, next) => {
   if (!req.user)
-    return res.redirect('/signup', { title: 'Doreen | Đăng ký/Đăng nhập' });
+    return res.redirect('/signup', {
+      title: 'Doreen | Đăng ký/Đăng nhập',
+      page: '/signup',
+    });
   next();
 });
 module.exports.checkout = (req, res) => {
-  res.render('layout/checkout', { title: 'Doreen | Đặt hàng' });
+  res.render('layout/checkout', {
+    title: 'Doreen | Đặt hàng',
+    page: '/checkout',
+  });
 };
 module.exports.products = catchAsync(async (req, res) => {
   const products = await Product.find();
@@ -50,8 +70,12 @@ module.exports.products = catchAsync(async (req, res) => {
     products,
     categories,
     title: 'Doreen | Thực đơn',
+    page: '/products',
   });
 });
 module.exports.blog = (req, res) => {
-  res.render('layout/blog', { title: 'Doreen | Blog' });
+  res.render('layout/blog', {
+    title: 'Doreen | Blog',
+    page: '/blog',
+  });
 };
