@@ -1,4 +1,3 @@
-
 const AppError = require('../utils/appError');
 const handlerValidationErrorDB = (err) => {
   const errMessage = Object.values(err.errors).map((el) => el.message);
@@ -14,6 +13,6 @@ module.exports = (err, req, res, next) => {
     message: err.message,
     err: err,
     //stack: err.stack
-  })
-  next()
-}
+  });
+  next();
+};

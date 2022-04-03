@@ -1,7 +1,10 @@
-<title> Doreen | Đặt hàng </title>
-<meta name=”robots” content="noindex, nofollow">
+
+    <title> Doreen | Đặt hàng </title>
+    <link rel="canonical" href="https://seoie204.me/checkout" >
+    <link rel="stylesheet" type="text/css" href="/css/order.css">
+</head>
+<body>
 <%- layout('./layout/template') %>
-<link rel="stylesheet" type="text/css" href="/css/order.css">
 <section class="order" id="order">
     <div>
         <h1 class="heading"><span>Đặt Hàng</span></h1>
@@ -16,123 +19,118 @@
                     <span>Email</span>
                     <input type="email" placeholder="email" value= "<%=user.email%>" name="email">
                 </div>
-                <div class="input">
-                    <span>Số điện thoại</span>
-                    <input type="text" placeholder="number" value= "<%= user.phone %>" name="phone">
-                </div>  
-            </div>
-            <div class="inputBox">
-                <div class="input">
-                    <span>Địa chỉ</span>
-                    <textarea placeholder="address" name="address" id="" cols="30" rows="10" ><%= user.address %> </textarea>
-                </div>
-                <div class="input">
-                    <span>Message</span>
-                    <textarea placeholder="" name="message" id="" cols="30" rows="10"></textarea>
-                </div>
-            </div>
-        </form>
-        <% } %> 
-        <form action="">
-            <div id="myModal" class="inputBox">
-                <div class="modal-body">
-                    <span>Đơn Hàng Của Bạn</span>
-                    <div class="cart-row">
-                        <span class="cart-item cart-header cart-column">Sản Phẩm</span>
-                        <span class="cart-price cart-header cart-column">Giá</span>
-                        <span class="cart-quantity cart-header cart-column">Số Lượng</span>
-                    </div>
-                    <div class="cart-items">
-                        <% if (cart) { %> 
-                            <% for ( product of cart.listProduct) { %> 
-                                <div class="cart-row">
-                                    <div class="cart-item cart-column">
-                                        <img class="cart-item-image" src="<%= product.info.images[0].url %>" alt="<%= product.slug %> " width="100" height="100">
-                                        <span class="cart-item-title"><%= product.name %> </span>
-                                    </div>
-                                    <span class="cart-price cart-column"><%= new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product.price)  %></span>
-                                    <div class="cart-quantity cart-column">
-                                        <input class="cart-quantity-input" type="number" value="<%= product.qty %>" readonly>
-                                    </div>
-                                </div>
-                            <% } %>
-                            <div class="cart-total">
-                                <strong class="cart-total-title">Tổng Cộng: </strong>
-                                <span class="cart-total-price"><%= new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(cart.totalPrice)%></span>
-                            </div>
-                        <% } else { %>
-                            <h3 style="text-align:center;padding:50px;">Giỏ hàng trống</h3>
-                        <% } %>   
-                    </div>
-                <div>
+                <div class="inputBox">
                     <div class="input">
-                        <span>Ngày và giờ</span>
-                        <input type="datetime-local" name="date">
+                        <span>Địa chỉ</span>
+                        <textarea placeholder="address" name="address" id="" cols="30" rows="10" ><%= user.address %> </textarea>
+                    </div>
+                    <div class="input">
+                        <span>Message</span>
+                        <textarea placeholder="" name="message" id="" cols="30" rows="10"></textarea>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" id ="order" class="btn order">Đặt hàng</button>
-                </div>  
-            </div>
-        </form>
-    </div>
-    <% if (cart) { %> 
-    <div class="modal modalOrdered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" style="text-align: center">Đã đặt hàng thành công</h5>
-            </div>
-            <div class="modal-body">
-                <div class="cart-items">
-                    <% for ( product of cart.listProduct) { %> 
+            </form>
+            <% } %> 
+            <form action="">
+                <div id="myModal" class="inputBox">
+                    <div class="modal-body">
+                        <span>Đơn Hàng Của Bạn</span>
                         <div class="cart-row">
-                            <div class="cart-item cart-column">
-                                <img class="cart-item-image" src="<%= product.info.images[0].url %>" alt="<%= product.slug %> " width="100" height="100">
-                                <span class="cart-item-title"><%= product.name %> </span>
-                            </div>
+                            <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+                            <span class="cart-price cart-header cart-column">Giá</span>
+                            <span class="cart-quantity cart-header cart-column">Số Lượng</span>
                         </div>
-                    <% } %> 
+                        <div class="cart-items">
+                            <% if (cart) { %> 
+                                <% for ( product of cart.listProduct) { %> 
+                                    <div class="cart-row">
+                                        <div class="cart-item cart-column">
+                                            <img class="cart-item-image" src="<%= product.info.images[0].url %>" alt="<%= product.slug %> " width="100" height="100">
+                                            <span class="cart-item-title"><%= product.name %> </span>
+                                        </div>
+                                        <span class="cart-price cart-column"><%= new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product.price)  %></span>
+                                        <div class="cart-quantity cart-column">
+                                            <input class="cart-quantity-input" type="number" value="<%= product.qty %>" readonly>
+                                        </div>
+                                    </div>
+                                <% } %>
+                                <div class="cart-total">
+                                    <strong class="cart-total-title">Tổng Cộng: </strong>
+                                    <span class="cart-total-price"><%= new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(cart.totalPrice)%></span>
+                                </div>
+                            <% } else { %>
+                                <h3 style="text-align:center;padding:50px;">Giỏ hàng trống</h3>
+                            <% } %>   
+                        </div>
+                    <div>
+                        <div class="input">
+                            <span>Ngày và giờ</span>
+                            <input type="datetime-local" name="date">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id ="order" class="btn order">Đặt hàng</button>
+                    </div>  
                 </div>
-            </div>
-            <div class="modal-header">
-                <h5 class="modal-title" >Vui lòng kiểm tra đơn đặt hàng của bạn trong email</h5>
+            </form>
+        </div>
+        <% if (cart) { %> 
+        <div class="modal modalOrdered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" style="text-align: center">Đã đặt hàng thành công</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="cart-items">
+                        <% for ( product of cart.listProduct) { %> 
+                            <div class="cart-row">
+                                <div class="cart-item cart-column">
+                                    <img class="cart-item-image" src="<%= product.info.images[0].url %>" alt="<%= product.slug %> " width="100" height="100">
+                                    <span class="cart-item-title"><%= product.name %> </span>
+                                </div>
+                            </div>
+                        <% } %> 
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <h5 class="modal-title" >Vui lòng kiểm tra đơn đặt hàng của bạn trong email</h5>
+                </div>
             </div>
         </div>
-    </div>
-    <% } %> 
-</section>
-<script>
-const btnOrder = document.querySelector('button[id="order"]');
-const modal = document.querySelector(".modalOrdered")
-const showOrdered = function () {
-    modal.classList.add('open')
-}
-const order = async function (data) {
-  try {
-    const response = await axios({
-        url: 'http://www.seoie204.me/api/product/order',
-        method: 'POST',
-        data,
-    })
-    if (response.data.status === 'success') {
-       showOrdered();
-       window.setTimeout(() => {
-         location.assign('/home')
-       }, 5000);
+        <% } %> 
+    </section>
+    <script>
+    const btnOrder = document.querySelector('button[id="order"]');
+    const modal = document.querySelector(".modalOrdered")
+    const showOrdered = function () {
+        modal.classList.add('open')
     }
-  } catch (error) {
-    alert(error);
-  }
-}
-btnOrder.addEventListener('click', function(e) {
-  e.preventDefault();
-  const username = document.querySelector('input[name="username"]').value;
-  const email = document.querySelector('input[name="email"]').value;
-  const phone = document.querySelector('input[name="phone"]').value;
-  const address = document.querySelector('textarea[name="address"]').value;
-  const message = document.querySelector('textarea[name="message"]').value || 'No message';
-  const date = document.querySelector('input[name="date"]').value;
-  order({username,email,phone,address,message,date});
-})
-</script>
+    const order = async function (data) {
+    try {
+        const response = await axios({
+            url: 'http://www.seoie204.me/api/product/order',
+            method: 'POST',
+            data,
+        })
+        if (response.data.status === 'success') {
+        showOrdered();
+        window.setTimeout(() => {
+            location.assign('/home')
+        }, 5000);
+        }
+    } catch (error) {
+        alert(error);
+    }
+    }
+    btnOrder.addEventListener('click', function(e) {
+    e.preventDefault();
+    const username = document.querySelector('input[name="username"]').value;
+    const email = document.querySelector('input[name="email"]').value;
+    const phone = document.querySelector('input[name="phone"]').value;
+    const address = document.querySelector('textarea[name="address"]').value;
+    const message = document.querySelector('textarea[name="message"]').value || 'No message';
+    const date = document.querySelector('input[name="date"]').value;
+    order({username,email,phone,address,message,date});
+    })
+    </script>
 
