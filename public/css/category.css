@@ -89,33 +89,38 @@
 /*thanh menu*/
 
 .menunav {
-  width: 1250px;
+  position: sticky;
+  display:grid;
+  grid-template-columns: 14.2% 14.2% 14.2% 14.2% 14.2% 14.2% 14.2%;
+  gap: .5rem;
+  width: 86%;
   height: 60px;
   display: inline-flex;
-  position: sticky;
   font-size: 2rem;
   margin: 10rem auto 1rem 13.5rem;
   background: #ecf0f1;
   border-radius: 10px;
-  left: 10rem;
-  right: inherit;
   color: var(--black);
   align-items: center;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   justify-content: space-around;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
   gap: 20px;
   top: 8rem;
   z-index: 1;
 }
 
 .menunav div {
-  padding: 1rem 4rem;
+  padding: 0.5% 0 0.5% 0;
   background-color: #bdc3c7;
   border-radius: 5px;
   color: white;
   cursor: pointer;
+  flex: 1 1 30rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .menunav div:hover, .menunav div.active{
@@ -128,7 +133,6 @@
 .dropbtn {
   font-size: 2.5rem;
   cursor: pointer;
-  z-index: -1;
   background-color: white;
 }
 
@@ -143,7 +147,7 @@
   position: relative;
   display: inline-block;
   margin: 2rem 0 0.7rem 13.5rem;
-  z-index: 2;
+  left: 2%;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -179,24 +183,12 @@
 .show {
   display: block;
 }
-/*Hr tag*/
-hr{
-  width: 1250px;
-  margin-left: 13.5rem;
-  margin-bottom: 2rem;
-  color: 2px solid black;
-}
 
 /*chi tiet mon an*/
 
-/* .dishes {
-  position: relative;
-  z-index: -1;
-} */
-
 .dishes .box-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 24% 24% 24% 24%;
   gap: 2.5rem;
 }
 
@@ -220,24 +212,27 @@ hr{
 }
 
 .dishes .box-container .box .price {
-  position: absolute;
-  top: 3rem;
-  left: 3rem;
-  background: var(--red);
-  color: #fff;
+  position: relative;
+  display: block;
+  color: var(--red);
+  font-weight: bold;
   font-size: 2rem;
   padding: .5rem 1rem;
   border-radius: .5rem;
+  width: 100%;
 }
 
-.dishes .box-container .box h3 {
+.dishes .box-container .box a {
   color: #333;
+  font-weight: bold;
   font-size: 2rem;
   padding-top: 1rem;
-  width: 250px;
+  width: 100%;
   overflow: hidden;
+  text-align: center;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .dishes .box-container .box .stars i {
@@ -245,6 +240,7 @@ hr{
   font-size: 1.7rem;
   padding: 1rem .1rem;
 }
+
 /* media queries  */
 
 @media(max-width:1250px) {
