@@ -51,7 +51,7 @@
         </a>
       </div>
       
-      <a href="/product/<%= product.slug%> "><%= product.name %></a>
+      <h2><a href="/product/<%= product.slug%> "><%= product.name %></a></h2>
       <br>
       <div class="stars">
         <i class="fas fa-star"></i>
@@ -60,8 +60,8 @@
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
       </div>
-      <p class="price" data-price="<%= product.price %>"
-        ><%= new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND'
+      <p class="price" data-price="<%= product.price %>">
+        <%= new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND'
         }).format(product.price)%>
       </p>
       <button class="btn" onclick="addCart('<%= product.id%>')">Thêm vào giỏ hàng</button>
