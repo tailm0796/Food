@@ -1,65 +1,67 @@
 <%- layout('./layout/template') %>
-    <title> Doreen | Thực đơn </title>
-    <link rel="canonical" href="https://seoie204.me/products" >
-    <link rel="stylesheet" type="text/css" href="/css/category.css">
-</head>
-<body>
-    <div class="slider">
-        <div class="slide active">
-            <img src="/img/banner/banner1.png" alt="">
-        </div>
-        <div class="slide">
-            <img src="/img/banner/banner2.png" alt="">
-        </div>
-        <div class="slide">
-            <img src="/img/banner/banner3.png" alt="">
-        </div>
-        <div class="navigation">
-            <i class="fas fa-chevron-left prev-btn"></i>
-            <i class="fas fa-chevron-right next-btn"></i>
-        </div>
-        <div class="navigation-visibility">
-            <div class="slide-icon active"></div>
-            <div class="slide-icon"></div>
-            <div class="slide-icon"></div>
-        </div>
+<link rel="stylesheet" type="text/css" href="/css/category.css" />
+<div class="slider">
+  <div class="slide active">
+    <img src="/img/banner/banner1.png" alt="" />
+  </div>
+  <div class="slide">
+    <img src="/img/banner/banner2.png" alt="" />
+  </div>
+  <div class="slide">
+    <img src="/img/banner/banner3.png" alt="" />
+  </div>
+  <div class="navigation">
+    <i class="fas fa-chevron-left prev-btn"></i>
+    <i class="fas fa-chevron-right next-btn"></i>
+  </div>
+  <div class="navigation-visibility">
+    <div class="slide-icon active"></div>
+    <div class="slide-icon"></div>
+    <div class="slide-icon"></div>
+  </div>
+</div>
+<nav class="menunav" id="menunav">
+  <div class="active" data-id="all">Tất cả</div>
+  <% for (let category of categories) { %>
+  <div class="category" data-id="<%= category.id %>"><%= category.name %></div>
+  <% } %>
+</nav>
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Phân Loại</button>
+  <div id="sort" class="dropdown-content">
+    <div class="sortAlpha" data-sort="1">A->Z</div>
+    <div class="sortAlpha" data-sort="-1">Z->A</div>
+    <div data-min="0" data-max="50000">~50.000Đ</div>
+    <div data-min="50000" data-max="100000">50.000Đ - 100.000Đ</div>
+    <div data-min="100000" data-max="200000">100.000Đ - 200.000Đ</div>
+  </div>
+</div>
+<hr style="height: 1px; border-width: 0; color: gray; background-color: gray" />
+<section class="dishes" id="dishes">
+  <div class="box-container">
+    <% for (let product of products) { %>
+    <div class="box">
+      <span class="price" data-price="<%= product.price %>"
+        ><%= new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND'
+        }).format(product.price)%>
+      </span>
+      <a href="/product/<%= product.slug%> ">
+        <img src="<%= product.images[0].url %> " alt="<%= product.slug %> " />
+      </a>
+      <h3 class="name"><%= product.name %></h3>
+      <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <button class="btn" onclick="addCart('<%= product.id%>')">
+        đặt hàng ngay
+      </button>
     </div>
-    <nav class="menunav" id="menunav">
-        <div class="active" data-id="all">Tất cả</div>
-        <% for (let category of categories) { %> 
-        <div class ="category" data-id = '<%= category.id %>'><%= category.name %></div>
-        <% } %> 
-    </nav>
-    <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Phân Loại</button>
-        <div id="sort" class="dropdown-content">
-            <div class ="sortAlpha" data-sort="1">A->Z</div>
-            <div class ="sortAlpha" data-sort="-1">Z->A</div>
-            <div data-min="0" data-max="50000">~50.000Đ</div>
-            <div data-min="50000" data-max="100000">50.000Đ - 100.000Đ</div>
-            <div data-min ="100000" data-max="200000">100.000Đ - 200.000Đ</div>
-        </div>
-    </div>
-    <hr style="height:1px;border-width:0;color:gray;background-color:gray">
-    <section class="dishes" id="dishes">
-        <div class="box-container">
-            <%  for (let product of products) { %> 
-            <div class="box">
-                <span class="price" data-price="<%= product.price %>"><%= new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product.price)%>  </span>
-                <a href="/product/<%= product.slug%> ">
-                <img src="<%= product.images[0].url %> " alt="<%= product.slug %> ">
-                </a>
-                <h3 class="name"><%= product.name %></h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <button class="btn" onclick="addCart('<%= product.id%>')">đặt hàng ngay</button>
-            </div>
-            <% } %> 
-        <div>
-    </section>
-    <script src="/js/category.js" ></script>
+    <% } %>
+  </div>
+</section>
+<script src="/js/category.js"></script>
+

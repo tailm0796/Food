@@ -1,8 +1,4 @@
 <%- layout('./layout/template') %>
-    <title>Doreen | Đặt và giao hàng nhanh gà rán, pizza, hamburger tại Thủ Đức</title>
-    <link rel="canonical" href="https://seoie204.me/" >
-</head>
-<body>
     <section class="home" id="home">
         <div class="row">
             <div class="col-2">
@@ -25,7 +21,7 @@
                 <a href="/products">
                 <img class="image" src="img/s-img-1.webp" alt="">
                 <div class="content">
-                    <img src="img/hamburger.png" width="50" height="50" alt="hamburger icon">
+                    <img src="img/hamburger.png" width="50px" height="50px" alt="hamburger icon">
                     <h3>Burger</h3>
                     <p></p>
                 </div>
@@ -36,7 +32,7 @@
                 <a href="/products">
                 <img class="image" src="img/s-img-2.webp" alt="">
                 <div class="content">
-                    <img src="img/pizza.png" width="50" height="50" alt="pizza icon">
+                    <img src="img/pizza.png" width="50px" height="50px" alt="pizza icon">
                     <h3>Pizza</h3>
                     <p></p>
                 </div>
@@ -48,7 +44,7 @@
                 <img class="image" src="img/s-img-3.webp" alt="">
 
                 <div class="content">
-                    <img src="img/-ice-cream_89753.png" width="55" height="55" alt="icecream icon">
+                    <img src="img/-ice-cream_89753.png" width="55px" height="55px" alt="icecream icon">
                     <h3>Kem</h3>
                     <p></p>
                 </div>
@@ -58,7 +54,7 @@
                 <a href="/products">
                     <img class="image" src="img/g-6.jpg" alt="">
                 <div class="content">
-                    <img src="img/fried-chicken.png" width="50" height="50" alt="chicken icon">
+                    <img src="img/fried-chicken.png" width="50px" height="50px" alt="chicken icon">
                     <h3>Gà rán</h3>
                     <p></p>
                 </div>
@@ -69,7 +65,7 @@
                 <a href="/products">
                 <img class="image" src="img/s-img-4.webp" alt="">
                 <div class="content">
-                    <img src="img/soda.png" width="50" height="50" alt="soda icon">
+                    <img src="img/soda.png" width="50px" height="50px" alt="soda icon">
                     <h3>Nước</h3>
                     <p></p>
                 </div>
@@ -80,7 +76,7 @@
                 <a href="/products">
                 <img class="image" src="img/s-img-5.webp" alt="">
                 <div class="content">
-                    <img src="img/cupcake.png" width="50" height="50" alt="cupcake icon">
+                    <img src="img/cupcake.png" width="50px" height="50px" alt="cupcake icon">
                     <h3>Bánh</h3>
                     <p></p>
                 </div>
@@ -96,6 +92,7 @@
                     <span class="price">
                         <%= product.price.toLocaleString('it-IT', {style : 'currency' , currency : 'VND' })%>
                     </span>
+                    <!--<a href="/product/<%= product.slug %>" alt="<%= product.slug %>">-->
                     <a href="/product/<%= product.slug %>">
                         <img src="<%= product.images[0].url %> " alt="<%= product.images[0].fileName %>">
                     </a>
@@ -120,7 +117,7 @@
             <div class="slideHome active">
                 <img class="background" src="img/background-slide1.webp" alt="bg-danh-gia-active">
                 <div class="content">
-                    <img class="avatar" src="img/avatar1.webp" width="280" height="280" alt="avt-danh-gia-active">
+                    <img class="avatar" src="img/avatar1.webp" width="280px" height="280px" alt="avt-danh-gia-active">
                     <div class="text">
                         <h2>Nguyễn Văn A</h2><br>
                         <div class="stars">
@@ -138,7 +135,7 @@
             <div class="slideHome">
                 <img class="background" src="img/background-slide1.webp"  alt="bg-danh-gia-depending">
                 <div class="content">
-                    <img class="avatar" src="img/avatar2.webp" width="280" height="280"  alt="avt-danh-gia-depending">
+                    <img class="avatar" src="img/avatar2.webp" width="280px" height="280px"  alt="avt-danh-gia-depending">
                     <div class="text">
                         <h2>Trần Yến B</h2><br>
                         <div class="stars">
@@ -156,7 +153,7 @@
             <div class="slideHome">
                 <img class="background" src="img/background-slide1.webp"  alt="bg-danh-gia-depending">
                 <div class="content">
-                    <img class="avatar" src="img/avatar3.webp" width="280" height="280" alt="avt-danh-gia-depending">
+                    <img class="avatar" src="img/avatar3.webp" width="280px" height="280px" alt="avt-danh-gia-depending">
                     <div class="text">
                         <h2>Phạm Anh C</h2><br>
                         <div class="stars">
@@ -174,7 +171,7 @@
             <div class="slideHome">
                 <img class="background" src="img/background-slide1.webp"  alt="bg-danh-gia-depending">
                 <div class="content">
-                    <img class="avatar" src="img/avatar4.webp" width="280" height="280" alt="avt-danh-gia-depending">
+                    <img class="avatar" src="img/avatar4.webp" width="280px" height="280px" alt="avt-danh-gia-depending">
                     <div class="text">
                         <h2>Lê Minh D</h2><br>
                         <div class="stars">
@@ -192,7 +189,7 @@
             <div class="slideHome">
                 <img class="background" src="img/background-slide1.webp"  alt="bg-danh-gia-depending">
                 <div class="content">
-                    <img class="avatar" src="img/avatar5.webp" width="280" height="280" alt="avt-danh-gia-depending">
+                    <img class="avatar" src="img/avatar5.webp" width="280px" height="280px" alt="avt-danh-gia-depending">
                     <div class="text">
                         <h2>Hà Quý E</h2><br>
                         <div class="stars">
@@ -228,25 +225,25 @@
                 <br>
                 <p> Doreen được thành lập từ tháng 12 năm 2021, là một cửa hàng thức ăn nhanh đẳng cấp vip pro được trao cho mình sứ mệnh xây dựng hệ thống cung
                     ứng chuỗi thức ăn nhanh ngon bá cháy. Với chỉ ngon-bổ-rẻ mà chúng tôi còn đảm bảo sự sạch sẽ, nhanh chóng để mang đến những món ăn ngon nhất
-                    tới mồm khách hàng. Nhưng SEO được rồi tính gì rồi tính :3 
+                    tới mồm khách hàng. Nhưng SEO được rồi tính gì rồi tính :3
                 </p>
             </div>
     </section>
     <section class="steps">
         <div class="box">
-            <img src="img/lua-chon-do-an-icon.webp" alt="" width="200" height="200">
+            <img src="img/lua-chon-do-an-icon.webp" alt="" width="200px" height="200px">
             <h3>Lựa chọn đồ ăn bạn yêu thích</h3>
         </div>
         <div class="box">
-            <img src="img/giao-hang-nhanh-chong-mien-phi-icon.webp" alt="" width="200" height="200">
+            <img src="img/giao-hang-nhanh-chong-mien-phi-icon.webp" alt="" width="200px" height="200px">
             <h3>Giao hàng nhanh chóng và miễn phí</h3>
         </div>
         <div class="box">
-            <img src="img/thanh-toan-tien-loi-icon.webp" alt="" width="200" height="200">
+            <img src="img/thanh-toan-tien-loi-icon.webp" alt="" width="200px" height="200px">
             <h3>Thanh toán tiện lợi</h3>
         </div>
         <div class="box">
-            <img src="img/thuong-thuc-do-an-icon.webp" alt="" width="200" height="200">
+            <img src="img/thuong-thuc-do-an-icon.webp" alt="" width="200px" height="200px">
             <h3>Thưởng thức đồ ăn ngon miệng</h3>
         </div>
     </section>

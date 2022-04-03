@@ -1,0 +1,27 @@
+{
+  "root": true,
+  "extends": ["prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": ["error"],
+    "max-params": 0
+  },
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "rules": {
+        "new-cap": "off",
+        "no-console": "error",
+        "no-unused-vars": "error",
+        "no-shadow": "off"
+      }
+    }
+  ]
+}
