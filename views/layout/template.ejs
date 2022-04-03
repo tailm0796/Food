@@ -1,57 +1,28 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="”robots”"
-      content="<% if(page === '/blog' || page === '/checkout'){ %>
-      index, follow
-      <% } else{ %>
-        noindex, nofollow
-      <% } %>"
-    />
-    <meta
-      name="description"
-      content=" Ét Ô Ét ! Doreen khuyến mãi cực lớn với combo Gà rán sốt chua ngọt,
-        pizza hải sản và hamburger bò Wagyu. Freeship giao hàng nhanh gà rán, pizza, hamburger trong khu vực Thủ Đức.
-        Liên hệ Hotline 0969696969 hoặc đặt hàng online ngay nào!"
-    />
-    <meta
-      name="keywords"
-      content="doreen,gà rán,Pizza,Hamburger,thủ đức,giao hàng nhanh"
-    />
 
-    <title><%= title %></title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content=" Ét Ô Ét ! Doreen khuyến mãi cực lớn với combo Gà rán sốt chua ngọt, 
+        pizza hải sản và hamburger bò Wagyu. Freeship giao hàng nhanh gà rán, pizza, hamburger trong khu vực Thủ Đức. 
+        Liên hệ Hotline 0969696969 hoặc đặt hàng online ngay nào!">
+        <meta name="keywords" content="doreen,gà rán,Pizza,Hamburger,thủ đức,giao hàng nhanh" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/template.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js" integrity="sha512-Idr7xVNnMWCsgBQscTSCivBNWWH30oo/tzYORviOCrLKmBaRxRflm2miNhTFJNVmXvCtzgms5nlJF4az2hiGnA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>   
+        <%- include('../partials/header')  %> 
+            <%- body -%> 
+        <%- include('../partials/footer') %> 
+        <!-- scroll top button  -->
+        <a href="#home" class="fas fa-angle-up" id="scroll-top"></a>
+        <!-- loader  -->
+        <div class="loader-container">
+            <img src="/img/loader.gif" alt="" width="150" height="150">
+        </div>
+        <!-- custom js file link  -->
+        <script src="/js/script.js"></script>
+    </body>
 
-    <link rel="canonical" href="https://seoie204.me/<%= page %>" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <link rel="stylesheet" type="text/css" href="/css/template.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
-    />
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js"
-      integrity="sha512-Idr7xVNnMWCsgBQscTSCivBNWWH30oo/tzYORviOCrLKmBaRxRflm2miNhTFJNVmXvCtzgms5nlJF4az2hiGnA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-  </head>
-  <body>
-    <%- include('../partials/header') %> <%- body -%> <%-
-    include('../partials/footer') %>
-    <!-- scroll top button  -->
-    <a href="#home" class="fas fa-angle-up" id="scroll-top"></a>
-    <!-- loader  -->
-    <div class="loader-container">
-      <img src="/img/loader.gif" alt="" width="150" height="150" />
-    </div>
-    <!-- custom js file link  -->
-    <script src="/js/script.js"></script>
-  </body>
 </html>
