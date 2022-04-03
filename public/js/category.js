@@ -1,4 +1,5 @@
 let menu = document.querySelector('#menu-bar');
+<<<<<<< HEAD
 let navbar = document.querySelector('.navbar');
 
 menu.onclick = () => {
@@ -21,6 +22,25 @@ window.onscroll = () => {
     document.querySelector('#scroll-top').classList.remove('active');
   }
 };
+=======
+  let navbarz = document.querySelector('#nav');
+
+  menu.onclick = () => {
+    navbarz.classList.toggle('active');
+    menu.classList.toggle('fa-times');
+  }
+
+//window.onscroll = () => {
+//  menu.classList.remove("fa-times");
+//    navbar.classList.remove("active"); 
+//
+//  if (window.scrollY > 60) {
+//    document.querySelector("#scroll-top").classList.add("active");
+//  } else {
+//    document.querySelector("#scroll-top").classList.remove("active");
+//  }
+//};
+>>>>>>> anh
 
 function loader() {
   document.querySelector('.loader-container').classList.add('fade-out');
@@ -140,8 +160,13 @@ const insertHTMLdishses = function (data) {
 const getCategory = async (id) => {
   try {
     const response = await axios({
+<<<<<<< HEAD
       method: 'GET',
       url: `https://www.seoie204.me/api/category/${id}`,
+=======
+      method: "GET",
+      url: `http://localhost:3000/api/category/${id}`,
+>>>>>>> anh
     });
     if (response.data.status === 'success') {
       for (let product of response.data.data.products) {
