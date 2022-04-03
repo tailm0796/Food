@@ -455,10 +455,11 @@ h5.modal-title {
   clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
 }
 .speciality .box-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
   gap: 1.5rem;
   height: 400px;
+  padding-left: 2%;
 }
 .speciality .box-container .box {
   flex: 1 1 30rem;
@@ -498,8 +499,8 @@ h5.modal-title {
 
 /*popular food*/
 .popular .box-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 24.25% 24.25% 24.25% 24.25%;
   gap: 1.5rem;
 }
 
