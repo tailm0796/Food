@@ -106,6 +106,7 @@
   text-align: center;
   text-decoration: none;
   justify-content: space-around;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
   gap: 20px;
   top: 8rem;
   z-index: 1;
