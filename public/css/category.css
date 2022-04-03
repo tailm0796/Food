@@ -218,8 +218,9 @@
   width: 100%;
 }
 
-.dishes .box-container .box h3 {
+.dishes .box-container .box a {
   color: #333;
+  font-weight: bold;
   font-size: 2rem;
   padding-top: 1rem;
   width: 100%;
@@ -227,6 +228,7 @@
   text-align: center;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .dishes .box-container .box .stars i {
