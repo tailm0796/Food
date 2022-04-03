@@ -740,7 +740,7 @@ h5.modal-title {
 }
 
 .footer .box-container .box p {
-  width: 95%;
+  width: 100%;
   text-transform: none;
 }
 
@@ -955,13 +955,19 @@ form {
         font-size: 2vw;
     }
 
+    body {
+        overflow: hidden; /* Hide scrollbars */
+    }
+    
+    /*about us*/
+
     .speciality {
         display: none;
     }
 
     .about-us .abt-us-container img {
         width: 100%;
-        height: 400px;
+        height: 300px;
         border-radius: 10px;
         opacity: 0.9;
       }
@@ -969,4 +975,53 @@ form {
         width: 100%;
         float: none;
     }
+
+    /*rate*/
+    .avatar {
+        display: block;
+        margin: 10%;
+        width: 80%;
+    }
+    .content {
+        width: 100%;
+        position: absolute;
+        float: none;
+        top: 0;
+        left: 0;
+    }
+
+    .sliderHome {
+        height: 520px;
+        border-radius: 10px;
+        margin-bottom: 1%;
+    }
+
+    .sliderHome .slideHome {
+        width: 92%;
+        height: 520px;
+      }
+
+    .sliderHome .slideHome .background {
+        height: 520px;
+    }
+
+    .sliderHome .slideHome.active {
+        clip-path: circle(99% at 47% 49%);
+        transition: 1s;
+      }
+    .sliderHome .navigation {
+        display: none;
+    }
+
+    .footer .box-container{
+        display: grid;
+        /*grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));*/
+        grid-template-columns: auto;
+        gap: 1.5rem;
+    }
+    .footer iframe{
+        width: 100%;
+        height: 300px;
+    }
+
 }
