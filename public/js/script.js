@@ -109,18 +109,18 @@ if (btnLogout) {
     logout();
   });
 }
-// function menuToggle() {
-//   const toggleMenu = document.querySelector(".list");
-//   toggleMenu.classList.toggle("active");
-// }
+function menuToggle() {
+  const toggleMenu = document.querySelector(".list");
+  toggleMenu.classList.toggle("active");
+}
 
 //rate - us
-// const sliderHome = document.querySelector(".sliderHome");
+const sliderHome = document.querySelector(".sliderHome");
 const nextBtnHome = document.querySelector('.next-btnHome');
 const prevBtnHome = document.querySelector('.prev-btnHome');
 const slidesHome = document.querySelectorAll('.slideHome');
 const slideIconsHome = document.querySelectorAll('.slide-iconHome');
-// const numberOfSlidesHome = 5;
+const numberOfSlidesHome = 5;
 var slideNumber = 0;
 nextBtnHome.addEventListener('click', () => {
   slidesHome.forEach((slide) => {

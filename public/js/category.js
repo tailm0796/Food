@@ -37,7 +37,7 @@ const nextBtn = document.querySelector('.next-btn');
 const prevBtn = document.querySelector('.prev-btn');
 const slides = document.querySelectorAll('.slide');
 const slideIcons = document.querySelectorAll('.slide-icon');
-// const numberOfSlides = 3;
+const numberOfSlides = 3;
 var slideNumber = 0;
 
 nextBtn.addEventListener('click', () => {
@@ -189,9 +189,9 @@ menuNav.addEventListener('click', function (e) {
 /* When the user clicks on the button,
   toggle between hiding and showing the dropdown content */
 const sort = document.querySelector('#sort');
-// function myFunction() {
-//   sort.classList.toggle("show");
-// }
+function myFunction() {
+  sort.classList.toggle('show');
+}
 
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {

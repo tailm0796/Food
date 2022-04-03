@@ -89,16 +89,15 @@
 /*thanh menu*/
 
 .menunav {
-  width: 1250px;
+  position: sticky;
+  left: 0;
+  width: 86%;
   height: 60px;
   display: inline-flex;
-  position: sticky;
   font-size: 2rem;
   margin: 10rem auto 1rem 13.5rem;
   background: #ecf0f1;
   border-radius: 10px;
-  left: 10rem;
-  right: inherit;
   color: var(--black);
   align-items: center;
   padding: 10px 20px;
@@ -144,6 +143,7 @@
   display: inline-block;
   margin: 2rem 0 0.7rem 13.5rem;
   z-index: 2;
+  left: 2%;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -179,24 +179,12 @@
 .show {
   display: block;
 }
-/*Hr tag*/
-hr{
-  width: 1250px;
-  margin-left: 13.5rem;
-  margin-bottom: 2rem;
-  color: 2px solid black;
-}
 
 /*chi tiet mon an*/
 
-/* .dishes {
-  position: relative;
-  z-index: -1;
-} */
-
 .dishes .box-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 24% 24% 24% 24%;
   gap: 2.5rem;
 }
 
@@ -220,22 +208,23 @@ hr{
 }
 
 .dishes .box-container .box .price {
-  position: absolute;
-  top: 3rem;
-  left: 3rem;
+  position: relative;
+  display: block;
   background: var(--red);
   color: #fff;
   font-size: 2rem;
   padding: .5rem 1rem;
   border-radius: .5rem;
+  width: 100%;
 }
 
 .dishes .box-container .box h3 {
   color: #333;
   font-size: 2rem;
   padding-top: 1rem;
-  width: 250px;
+  width: 100%;
   overflow: hidden;
+  text-align: center;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -245,6 +234,7 @@ hr{
   font-size: 1.7rem;
   padding: 1rem .1rem;
 }
+
 /* media queries  */
 
 @media(max-width:1250px) {
