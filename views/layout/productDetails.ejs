@@ -7,9 +7,7 @@
 <div class="product-page">
   <div class="product-container">
     <div class="field-back">
-      <a href="https://seoie204.me/products"
-        ><button class="btn-back" title="Quay lại">← Quay lại</button></a
-      >
+      <button class="btn-back" title="Quay lại" onclick="window.location.href='/products';">← Quay lại</button>
     </div>
     <div class="product-category-detail">
       <div class="field-img">
@@ -37,31 +35,17 @@
         <h2 style="margin-top: 16px"><%= product.name %></h2>
         <div class="field-price">
           <span
-            ><%= new Intl.NumberFormat('vi-VN', { style: 'currency', currency:
-            'VND' }).format(product.price) %>
+            ><%= new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product.price) %>
           </span>
         </div>
-        <div class="field-content">
-          <div class="field-breadcrumb">
-            <ul class="breadcrumb">
-              <li><a href="http://localhost:3000">Trang chủ</a></li>
-              <li><a href="http://localhost:3000/products">Menu</a></li>
-              <li><%= product.name %> </li>
-            </ul>
+        <div class="field-note">
+          <div class="field-text">
+            <p><%= product.description %></p>
           </div>
-          <h2 style="margin-top:16px"><%= product.name %></h2>
-          <div class="field-price">
-            <span><%= new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product.price) %> </span>
-          </div>
-          <div class="field-note">
-            <div class="field-text">
-              <p><%= product.description %></p>
-            </div>
-          </div>
-          <button class="add-bt" onclick="addCart('<%= product.id%>')">
-            Thêm vào giỏ hàng
-          </button>
         </div>
+        <button class="add-bt" onclick="addCart('<%= product.id%>')">
+          Thêm vào giỏ hàng
+        </button>
       </div>
     </div>
   </div>
