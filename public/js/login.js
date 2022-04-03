@@ -53,7 +53,6 @@ LoginForm.addEventListener('submit', (e) => {
 //RESGISTER
 const registerUser = async (data) => {
   try {
-<<<<<<< HEAD
     const response = await axios({
       method: 'POST',
       url: 'http://www.seoie204.me/api/user/signup',
@@ -65,19 +64,6 @@ const registerUser = async (data) => {
         location.assign('/home');
       }, 1000);
     }
-=======
-  const response = await axios ({
-    method: 'POST',
-    url:'http://localhost:3000/api/user/signup',
-    data,
-  })
-  if (response.data.status === 'success'){
-    showAlert('success', 'Register Successfully');
-    window.setTimeout(() => {
-      location.assign('/home')
-    }, 1000);
-  }
->>>>>>> anh
   } catch (err) {
     showAlert('failed', err.response.data.message);
   }
