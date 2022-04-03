@@ -187,15 +187,63 @@ section {
   color: var(--red);
 }
 
+.show {display: block;}
+
 #menu-bar {
   font-size: 3rem;
-  cursor: pointer;
   color: #666;
   border: 0.1rem solid #666;
   border-radius: 0.3rem;
   padding: 0.5rem 1.5rem;
   display: none;
+  overflow: hidden;
 }
+
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.menu-bar {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-bar a:hover {
+  background-color: var(--black);
+}
+
+
+.dropdown-menu-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-menu-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu-content a:active {
+  background-color: var(--red);
+  color: #FFF;
+}
+
 .header .icons div {
   height: 4.5rem;
   width: 4.5rem;
@@ -890,7 +938,9 @@ h5.modal-title {
     
     header .navbar{
         position: absolute;
-        top:100%; left: 0; right:0;
+        top:100%; 
+        left: 0; 
+        right:0;
         background: #f7f7f7;
         border-top: .1rem solid rgba(0,0,0,.1);
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
@@ -907,10 +957,7 @@ h5.modal-title {
         border:.2rem solid rgba(0,0,0,.1);
         border-left:.5rem solid var(--red);
         background:#fff;
-    }
-
-    header 
-    
+    }    
     /*about us*/
 
     .speciality {

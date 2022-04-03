@@ -9,7 +9,16 @@
     <a href="#contact" class="scroll" data-section="contact">Liên hệ</a>
     <a href="/blog">Blog</a>
   </nav>
-  <div id="menu-bar" class="fas fa-bars"></div>
+  <div class="menu-bar">
+        <button onclick="myFFunction()" class="dropbtn"><i class="fas fa-shopping-cart"></i></button>
+        <div id="myDropdown" class="dropdown-menu-content">
+            <a href="/">Trang chủ</a>
+            <a href="/products">Đồ ăn</a>
+            <a href="#">Đăng nhập</a>
+            <a href="#">Giỏ hàng</a>
+            <a href="#contact" class="scroll">Liên hệ</a>
+         </div>
+  </div>
   <% if (user !== null) { %>
   <div class="icons">
     <div class="fas fa-shopping-cart" id="cart-btn"></div>
