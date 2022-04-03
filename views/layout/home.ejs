@@ -2,7 +2,7 @@
     <section class="home" id="home">
         <div class="row">
             <div class="col-2">
-                <h3 style = "text-align:center">Giải quyết cơn đói của bạn một cách <span>nhanh chóng!</span></h3>
+                <h1 style = "text-align:center">Giải quyết cơn đói của bạn một cách <span>nhanh chóng!</span></h1>
                 <p>Không cần đi đâu xa cũng có thể thưởng thức hamburger và
                     nhâm nhi gà rán cùng gia đình ngay tại nhà trong mùa dịch.
                     Còn chần chờ gì mà không đặt hàng ngay!!!</p>
@@ -15,6 +15,7 @@
     </section>
     <section class="speciality" id="speciality">
         <h1 class="heading">Menu</h1>
+        <br>
         <div class="box-container">
             <div class="box">
 
@@ -22,7 +23,7 @@
                 <img class="image" src="img/s-img-1.webp" alt="">
                 <div class="content">
                     <img src="img/hamburger.png" width="50" height="50" alt="hamburger icon">
-                    <h3>Burger</h3>
+                    <h2>Burger</h2>
                     <p></p>
                 </div>
                 </a>
@@ -33,7 +34,7 @@
                 <img class="image" src="img/s-img-2.webp" alt="">
                 <div class="content">
                     <img src="img/pizza.png" width="50" height="50" alt="pizza icon">
-                    <h3>Pizza</h3>
+                    <h2>Pizza</h2>
                     <p></p>
                 </div>
                 </a>
@@ -45,7 +46,7 @@
 
                 <div class="content">
                     <img src="img/-ice-cream_89753.png" width="55" height="55" alt="icecream icon">
-                    <h3>Kem</h3>
+                    <h2>Kem</h2>
                     <p></p>
                 </div>
                 </a>
@@ -55,7 +56,7 @@
                     <img class="image" src="img/g-6.jpg" alt="">
                 <div class="content">
                     <img src="img/fried-chicken.png" width="50" height="50" alt="chicken icon">
-                    <h3>Gà rán</h3>
+                    <h2>Gà rán</h2>
                     <p></p>
                 </div>
                 </a>
@@ -66,7 +67,7 @@
                 <img class="image" src="img/s-img-4.webp" alt="">
                 <div class="content">
                     <img src="img/soda.png" width="50" height="50" alt="soda icon">
-                    <h3>Nước</h3>
+                    <h2>Nước</h2>
                     <p></p>
                 </div>
                 </a>
@@ -77,7 +78,7 @@
                 <img class="image" src="img/s-img-5.webp" alt="">
                 <div class="content">
                     <img src="img/cupcake.png" width="50" height="50" alt="cupcake icon">
-                    <h3>Bánh</h3>
+                    <h2>Bánh</h2>
                     <p></p>
                 </div>
                 </a>
@@ -86,6 +87,7 @@
     </section>
     <section class="popular" id="popular">
         <h1 class="heading">Phổ biến</h1>
+        <br>
         <div class="box-container">
             <% for (let product of products) { %>
                 <div class="box">
@@ -96,9 +98,9 @@
                     <a href="/product/<%= product.slug %>">
                         <img src="<%= product.images[0].url %> " alt="<%= product.images[0].fileName %>">
                     </a>
-                    <h3>
+                    <h2>
                         <%= product.name %>
-                    </h3>
+                    </h2>
                     <div class="starts">
                         <% for(let i=0; i<product.rating; i++) { %>
                             <i class="fas fa-star"></i>
@@ -109,10 +111,9 @@
                 <% } %>
         </div>
     </section>
-    
-    <h1 class="heading">Đánh giá</h1>
-
     <section class="rate-us" id="rate-us">
+        <h1 class="heading">Đánh giá</h1>
+        <br>
         <div class="sliderHome">
             <div class="slideHome active">
                 <img class="background" src="img/background-slide1.webp" alt="bg-danh-gia-active">
@@ -217,10 +218,11 @@
             </div>
         </div>
     </section>
-    <h1 class="heading">Về chúng tôi</h1>
     <section class="about-us" id="about-us">
+        <h1 class="heading">Về chúng tôi</h1><br>
+        <div class="abt-us-container">
             <img src="img/about-us.webp" alt="about-us-image">
-            <div class="text-abt-us">
+            <div class = "text-abt-us">
                 <h2>Doreen Shop</h2>
                 <br>
                 <p> Doreen được thành lập từ tháng 12 năm 2021, là một cửa hàng thức ăn nhanh đẳng cấp vip pro được trao cho mình sứ mệnh xây dựng hệ thống cung
@@ -228,6 +230,7 @@
                     tới mồm khách hàng. Nhưng SEO được rồi tính gì rồi tính :3
                 </p>
             </div>
+        </div>
     </section>
     <section class="steps">
         <div class="box">
