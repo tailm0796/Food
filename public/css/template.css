@@ -445,7 +445,6 @@ h5.modal-title {
 .heading a{
     background: var(--red);
     color:#fff;
-    display: inline-block;
     padding:.5rem 3rem;
     clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
     text-decoration: none;
@@ -654,31 +653,34 @@ h5.modal-title {
 
 /*about-us*/ 
 
+.about-us {
+    width: 100%;
+    height: 100%;
+}
+
+.about-us .abt-us-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 49% 49%;
+    gap: 2%;
+}
+
 .about-us .abt-us-container img {
-    position: relative;
-    width: 49%;
-    height: 400px;
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
     opacity: 0.9;
 }
   
 .about-us .abt-us-container .text-abt-us {
-    position: relative;
-    width: 49%;
-    float: right;
-    margin-top: 5%;
+    width: 100%;
 }
   
 .about-us .abt-us-container .text-abt-us h2 {
     font-size: 3rem;
     color: #e74c3c;
 }
-  .about-us .abt-us-container .text-abt-us strong {
-    color: #e74c3c;
-    opacity: 0.9;
-    text-transform: none;
-}
-  .about-us .abt-us-container .text-abt-us p {
+.about-us .abt-us-container .text-abt-us p {
     line-height: 1.7;
     font-size: 2rem;
     text-transform: none;
@@ -891,12 +893,12 @@ h5.modal-title {
         height: 500px;
     }
 }
-@media(max-width:767px){
+@media(max-width:770px){
     .footer .box-container{
         display: grid;
         /*grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));*/
-        grid-template-columns: auto;
-        gap:5%;
+        grid-template-columns: 49% 49%;
+        gap: 2%;
     }
     #menu-bar{
       display: initial;
@@ -973,18 +975,21 @@ h5.modal-title {
         display: none;
     }
 
-    /*about us*/
-    .about-us .abt-us-container img {
-        width: 100%;
-        height: 300px;
-        border-radius: 10px;
-        opacity: 0.9;
-      }
-    .about-us .abt-us-container .text-abt-us {
-        width: 100%;
-        float: none;
+    .rate-us {
+        display: none;
     }
-    
+
+    /*about us*/
+    .about-us .abt-us-container {
+        display: grid;
+        grid-template-columns: 98%;
+        gap: 2%;
+    }
+
+    .about-us .abt-us-container img {
+        display: none;
+    }
+
     .popular .box-container{
         display: grid;
         grid-template-columns: 100%;
