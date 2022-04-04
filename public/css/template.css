@@ -414,14 +414,14 @@ h5.modal-title {
     max-width: 100%;
     padding: 50px 0;
 }
-.col-2 h3{
+.col-2 h1{
     font-size: 40px;
     line-height: 50px;
     margin: 25px 0;
     color:var(--black);
     font-size: 50px;
 }
-.col-2 h3 span{
+.col-2 h1 span{
     color:var(--red);
 }
 .col-2 p{
@@ -442,16 +442,17 @@ h5.modal-title {
     color:var(--black);
 }
 
-.heading span{
+.heading a{
     background: var(--red);
     color:#fff;
     display: inline-block;
     padding:.5rem 3rem;
     clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+    text-decoration: none;
 }
 .speciality .box-container{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto auto auto;
     gap: 1.5rem;
 }
 .speciality .box-container .box{
@@ -479,7 +480,7 @@ h5.modal-title {
 .speciality .box-container .box .content img{
     margin: 1.5rem 0;
 }
-.speciality .box-container .box .content h3{
+.speciality .box-container .box .content h2{
     font-size: 2.5rem;
     color: #333;
 }
@@ -493,9 +494,9 @@ h5.modal-title {
 
 /*popular food*/
 .popular .box-container{
-    display: flex;
-    flex-wrap: wrap;
-    gap:1.5rem;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 1.5rem;
 }
   
 .popular .box-container .box{
@@ -539,7 +540,7 @@ h5.modal-title {
 
 .sliderHome {
     width: 100%;
-    height: 40vw;
+    height: 20vw;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
@@ -547,7 +548,7 @@ h5.modal-title {
 .sliderHome .slideHome {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 20vw;
     clip-path: circle(0% at 50% 50%);
 }
 .sliderHome .slideHome.active {
@@ -556,7 +557,7 @@ h5.modal-title {
 }
 .sliderHome .slideHome .background{
     width: 100%;
-    height: 100%;
+    height: 20vw;
     position: relative;
     border-radius: 5px;
 }
@@ -567,30 +568,30 @@ h5.modal-title {
     left: 10%;
     display: grid;
     grid-template-columns: 50% 50%;
-    
+    grid-gap: 1rem;
 }
 .avatar{
-    width: 30vw;
-    height: 30vw;
+    width: 15vw;
+    height: 15vw;
     border-radius: 90%;
+    align-items: center;
 }
 .text{
+    width: 100%;
     text-align: center;
-    float: right;
-   
 }
 .sliderHome .content .stars i{
     color: gold;
     padding: 1% 0;
-    margin-bottom: 2rem;
-    font-size: 3vw;
+    margin-bottom: 3rem;
+    font-size: 2vw;
 }
 .sliderHome .content h2{
-    font-size: 4vw;
+    font-size: 3vw;
     color: #3B3B98;
 }
 .sliderHome .content p{
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: bold;
     color: #cc8e35;
     text-transform: none;
@@ -652,16 +653,22 @@ h5.modal-title {
 }
 
 /*about-us*/
-.about-us{
-    display: grid;
-    gap: 5%;
-    grid-template-columns: auto auto;
-}
-.about-us img{
+.about-us-container {
     width: 100%;
-    height: 70%;
+    display: grid;
+    gap: 5rem;
+    grid-template-columns: 50% 50%;
+}
+
+.about-us-container img{
+    width: 100%;
+    height: 500px;
     border-radius: 5px;
     opacity: 0.9;
+}
+
+.text-abt-us {
+    width: 100%;
 }
 
 .text-abt-us h2{
@@ -675,7 +682,7 @@ h5.modal-title {
 }
 .text-abt-us p{
     line-height: 1.7;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-transform: none;
     color: #666;
     text-align: justify;
@@ -726,8 +733,8 @@ h5.modal-title {
     overflow: hidden;
     display: grid;
     /*grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));*/
-    grid-template-columns: auto 1fr auto auto;
-    gap:5%;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 5rem;
 }
 
 .footer .box-container .box {
@@ -949,8 +956,13 @@ h5.modal-title {
 }  
 @media(max-width:450px){
     html{
-      font-size: 50%;
-    } 
+      font-size: 3vw;
+    }
+
+    .btn {
+        display: none;
+    }
+    
     .order .row form .inputBox input{
         width:100%;
     }

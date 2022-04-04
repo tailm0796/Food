@@ -1,7 +1,9 @@
-<title> Doreen | <%= product.name %> </title>
+  <title> Doreen | <%= product.name %> </title>
+  <link rel="canonical" href="https://seoie204.me/product/<%= product.slug %>" >
+  <link rel="stylesheet" type="text/css" href="/css/productDetail.css" />
+</head>
+<body>
 <%- layout('./layout/template') %>
-<link rel="canonical" href="https://seoie204.me/product/<%= product.slug %>" >
-<link rel="stylesheet" type="text/css" href="/css/productDetail.css" />
 <div class="product-page">
   <div class="product-container">
     <div class="field-back">
