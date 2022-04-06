@@ -1,9 +1,13 @@
+  <title> Doreen | <%= product.name %> </title>
+  <link rel="canonical" href="https://seoie204.me/product/<%= product.slug %>" >
+  <link rel="stylesheet" type="text/css" href="/css/productDetail.css" />
+</head>
+<body>
 <%- layout('./layout/template') %>
-<link rel="stylesheet" type="text/css" href="/css/productDetail.css" />
 <div class="product-page">
   <div class="product-container">
     <div class="field-back">
-      <a href="/products"
+      <a href="http://localhost:3000/products"
         ><button class="btn-back" title="Quay lại">← Quay lại</button></a
       >
     </div>
@@ -21,8 +25,8 @@
       <div class="field-content">
         <div class="field-breadcrumb">
           <ul class="breadcrumb">
-            <li><a href="/home">Trang chủ</a></li>
-            <li><a href="/products">Menu</a></li>
+            <li><a href="http://localhost:3000">Trang chủ</a></li>
+            <li><a href="http://localhost:3000/products">Menu</a></li>
             <li><%= product.name %> </li>
           </ul>
         </div>
@@ -54,4 +58,5 @@
   const description = document.querySelector('.field-text p').textContent;
   fieldText.innerHTML = description.replace(/%d/g, '<br> <br>')
 </script>
+<script src="/js/category.js" ></script>
 
