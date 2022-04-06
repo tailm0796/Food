@@ -46,3 +46,6 @@ module.exports.products = catchAsync(async(req, res) => {
 module.exports.blog = (req , res) => {
   res.render('layout/blog');
 }
+module.exports.blog_post = (req , res) => {
+  res.render('layout/blog_post');
+}
