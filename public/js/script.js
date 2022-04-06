@@ -50,7 +50,7 @@ async function addCart(id) {
     const idProduct = id;
     const response  = await axios({
       method: "GET",
-      url: "http://www.seoie204.me/api/product/addCart/"+ idProduct,
+      url: "https://www.seoie204.me/api/product/addCart/"+ idProduct,
     })
     Cart.innerHTML = "";
     Cart.innerHTML = response.data;
@@ -65,7 +65,7 @@ async function deleteItems (id) {
     const idProduct = id;
     const response  = await axios({
       method: "GET",
-      url: "http://www.seoie204.me/api/product/deleteItem/"+idProduct,
+      url: "https://www.seoie204.me/api/product/deleteItem/"+idProduct,
     })
     Cart.innerHTML = "";
     Cart.innerHTML = response.data;
@@ -79,7 +79,7 @@ async function changeQtyItems (el) {
   try {
     const response  = await axios({
       method: "GET",
-      url: `http://www.seoie204.me/api/product/editQtyItem/${el.id}/qty/${el.value}`,
+      url: `https://www.seoie204.me/api/product/editQtyItem/${el.id}/qty/${el.value}`,
     })
     Cart.innerHTML = "";
     Cart.innerHTML = response.data;
@@ -95,7 +95,7 @@ const logout = async function ()  {
   try {
     const res = await axios({
     method: 'GET',
-    url : 'http://www.seoie204.me/api/user/logout',
+    url : 'https://www.seoie204.me/api/user/logout',
     });
     if (res.data.status === 'success') {
     location.assign('/home')

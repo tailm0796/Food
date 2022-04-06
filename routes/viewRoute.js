@@ -14,5 +14,4 @@ router.get('/createProductForm',viewController.createProductForm);
 router.get('/signup',viewController.signupForm);
 router.get('/login',viewController.loginForm);
 router.get('/blog',viewController.blog);
-router.get('/blog_post',viewController.blog_post);
 module.exports = router;
