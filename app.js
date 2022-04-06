@@ -21,9 +21,8 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => {
-    console.log('DB connection successfully');
-  });
+  .then(() => console.log('Database Connected'))
+  .catch((err) => console.log(err));
 const store = MongoStore.create({
   //luu session vao database
   mongoUrl: DB,
