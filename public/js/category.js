@@ -1,26 +1,22 @@
 let menu = document.querySelector('#menu-bar');
-  let navbar = document.querySelector('.navbar');
+  let navbarz = document.querySelector('#nav');
 
   menu.onclick = () => {
+    navbarz.classList.toggle('active');
     menu.classList.toggle('fa-times');
-    navbar.classList.toggle('active');
+    console.log("cc")
   }
 
-  menu.onclick = () => {
-    menu.classList.toggle('fa-times');
-    navbar.classList.toggle('active');
-  } 
-
-window.onscroll = () => {
-  menu.classList.remove("fa-times");
-    navbar.classList.remove("active"); 
-
-  if (window.scrollY > 60) {
-    document.querySelector("#scroll-top").classList.add("active");
-  } else {
-    document.querySelector("#scroll-top").classList.remove("active");
-  }
-};
+//window.onscroll = () => {
+//  menu.classList.remove("fa-times");
+//    navbar.classList.remove("active"); 
+//
+//  if (window.scrollY > 60) {
+//    document.querySelector("#scroll-top").classList.add("active");
+//  } else {
+//    document.querySelector("#scroll-top").classList.remove("active");
+//  }
+//};
 
 function loader() {
   document.querySelector(".loader-container").classList.add("fade-out");
@@ -141,7 +137,7 @@ const getCategory = async (id) => {
   try {
     const response = await axios({
       method: "GET",
-      url: `https://www.seoie204.me/api/category/${id}`,
+      url: `http://localhost:3000/api/category/${id}`,
     });
     if (response.data.status === "success") {
       for (let product of response.data.data.products) {
@@ -156,7 +152,7 @@ const getAllProduct = async () => {
   try {
     const response = await axios({
       method: "GET",
-      url: `https://www.seoie204.me/api/product/`,
+      url: `http://localhost:3000/api/product/`,
     });
     if (response.data.status === "success") {
       for (let product of response.data.data) {

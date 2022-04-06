@@ -414,14 +414,14 @@ h5.modal-title {
     max-width: 100%;
     padding: 50px 0;
 }
-.col-2 h1{
+.col-2 h3{
     font-size: 40px;
     line-height: 50px;
     margin: 25px 0;
     color:var(--black);
     font-size: 50px;
 }
-.col-2 h1 span{
+.col-2 h3 span{
     color:var(--red);
 }
 .col-2 p{
@@ -445,13 +445,13 @@ h5.modal-title {
 .heading a{
     background: var(--red);
     color:#fff;
+    display: inline-block;
     padding:.5rem 3rem;
     clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
-    text-decoration: none;
 }
 .speciality .box-container{
-    display: grid;
-    grid-template-columns: auto auto auto;
+    display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
 }
 .speciality .box-container .box{
@@ -462,6 +462,9 @@ h5.modal-title {
     border: .1 rem solid rgba(0,0,0,.3);
     cursor: pointer;
     border-radius: .5rem;
+}
+.speciality .box-container .box a {
+    color: #000;
 }
 .speciality .box-container .box .image{
     height: 100%;
@@ -479,7 +482,7 @@ h5.modal-title {
 .speciality .box-container .box .content img{
     margin: 1.5rem 0;
 }
-.speciality .box-container .box .content h2{
+.speciality .box-container .box .content h3{
     font-size: 2.5rem;
     color: #333;
 }
@@ -493,9 +496,9 @@ h5.modal-title {
 
 /*popular food*/
 .popular .box-container{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    gap: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
 }
   
 .popular .box-container .box{
@@ -539,7 +542,7 @@ h5.modal-title {
 
 .sliderHome {
     width: 100%;
-    height: 20vw;
+    height: 30vw;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
@@ -547,7 +550,7 @@ h5.modal-title {
 .sliderHome .slideHome {
     position: absolute;
     width: 100%;
-    height: 20vw;
+    height: 100%;
     clip-path: circle(0% at 50% 50%);
 }
 .sliderHome .slideHome.active {
@@ -556,41 +559,41 @@ h5.modal-title {
 }
 .sliderHome .slideHome .background{
     width: 100%;
-    height: 20vw;
+    height: 100%;
     position: relative;
     border-radius: 5px;
 }
 .sliderHome .content{
     width: 80%;
     position: absolute;
-    top: 15%;
+    top: 0%;
     left: 10%;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-gap: 1rem;
+    
 }
 .avatar{
-    width: 15vw;
-    height: 15vw;
+    width: 30vw;
+    height: 30vw;
     border-radius: 90%;
-    align-items: center;
 }
 .text{
-    width: 100%;
     text-align: center;
+    float: right;
+    margin-top: 10%;
 }
 .sliderHome .content .stars i{
     color: gold;
     padding: 1% 0;
-    margin-bottom: 3rem;
-    font-size: 2vw;
+    margin-bottom: 2rem;
+    font-size: 3vw;
 }
 .sliderHome .content h2{
-    font-size: 3vw;
+    font-size: 4vw;
     color: #3B3B98;
 }
 .sliderHome .content p{
-    font-size: 1.5vw;
+    font-size: 2vw;
     font-weight: bold;
     color: #cc8e35;
     text-transform: none;
@@ -651,38 +654,32 @@ h5.modal-title {
     opacity: 0.8;
 }
 
-/*about-us*/ 
-
-.about-us {
-    width: 100%;
-    height: 100%;
-}
-
-.about-us .abt-us-container {
-    width: 100%;
+/*about-us*/
+.hahaha {
     display: grid;
-    grid-template-columns: 49% 49%;
-    gap: 2%;
-}
+    gap: 5%;
+    grid-template-columns: auto auto;
 
-.about-us .abt-us-container img {
+}
+.about-us img{
     width: 100%;
-    height: 100%;
-    border-radius: 10px;
+    height: 70%;
+    border-radius: 5px;
     opacity: 0.9;
 }
-  
-.about-us .abt-us-container .text-abt-us {
-    width: 100%;
-}
-  
-.about-us .abt-us-container .text-abt-us h2 {
+
+.text-abt-us h2{
     font-size: 3rem;
     color: #e74c3c;
 }
-.about-us .abt-us-container .text-abt-us p {
+.text-abt-us strong{
+    color: #e74c3c;
+    opacity: 0.9;
+    text-transform: none;
+}
+.text-abt-us p{
     line-height: 1.7;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-transform: none;
     color: #666;
     text-align: justify;
@@ -733,8 +730,8 @@ h5.modal-title {
     overflow: hidden;
     display: grid;
     /*grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));*/
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 5rem;
+    grid-template-columns: auto 1fr auto auto;
+    gap:5%;
 }
 
 .footer .box-container .box {
@@ -890,15 +887,17 @@ h5.modal-title {
 }
 @media(max-width: 870px){
     .speciality .box-container{
-        height: 500px;
+        height: 33rem;
+        display: grid;
+        grid-template-columns: auto auto auto;
     }
 }
-@media(max-width:770px){
+@media(max-width:767px){
     .footer .box-container{
         display: grid;
         /*grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));*/
-        grid-template-columns: 49% 49%;
-        gap: 2%;
+        grid-template-columns: auto;
+        gap:5%;
     }
     #menu-bar{
       display: initial;
@@ -940,10 +939,7 @@ h5.modal-title {
 }
 
 @media(max-width: 592px){
-    .speciality .box-container{
-        height: 1000px;
-    }
-    .about-us{
+    .hahaha{
         display: grid;
         grid-template-columns: auto;
     }
@@ -956,47 +952,14 @@ h5.modal-title {
 }  
 @media(max-width:450px){
     html{
-      font-size: 3vw;
-    }
-
-    .btn {
-        display: none;
-    }
-    
+      font-size: 50%;
+    } 
     .order .row form .inputBox input{
         width:100%;
     }
     .slider .slide{
         width: 95%;
     }  
-    
-    /*Menu*/
-    .speciality {
-        display: none;
-    }
-
-    .rate-us {
-        display: none;
-    }
-
-    /*about us*/
-    .about-us .abt-us-container {
-        display: grid;
-        grid-template-columns: 98%;
-        gap: 2%;
-    }
-
-    .about-us .abt-us-container img {
-        display: none;
-    }
-
-    .popular .box-container{
-        display: grid;
-        grid-template-columns: 100%;
-        gap: 1.5rem;
-    }
-
-
     .footer .box-container{
         display: grid;
         /*grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));*/
