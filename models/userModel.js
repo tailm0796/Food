@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const emailRex =
-  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -33,15 +32,15 @@ const userSchema = new mongoose.Schema({
     minlength: 8,
     maxlength: 16,
     validate: {
-      validator: function (val) {
+      validator: function(val) {
         return val === this.password;
       },
       message: 'Incorrect password comfirm.Please try again',
     },
   },
-  role: {
+  role : {
     type: String,
-    enum: ['Khách hàng', 'Admin'],
+    enum: ['Khách hàng','Admin'],
     default: 'Khách hàng',
   },
   phone: {
@@ -51,18 +50,15 @@ const userSchema = new mongoose.Schema({
   address: {
     type: String,
     require: [true, 'Please provide your address'],
-  },
-});
+  }
+})
 
-userSchema.pre('save', async function (next) {
+userSchema.pre('save', async function(next) {
   if (!this.isModified('password')) return next();
   this.password = await bcrypt.hash(this.password, 12);
   this.confirmPassword = undefined;
-});
-userSchema.methods.comparePassword = async function (
-  enterPassword,
-  userPassword
-) {
+})
+userSchema.methods.comparePassword = async function(enterPassword, userPassword) {
   return bcrypt.compare(enterPassword, userPassword);
 };
 const User = mongoose.model('User', userSchema);

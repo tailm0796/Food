@@ -6,8 +6,8 @@ const imageSchema = new mongoose.Schema({
   },
   fileName: {
     type: String,
-  },
-});
+  }    
+})
 /* imageSchema.virtual('thumbnail').get(function(){
   return this.url.replace('/upload','/upload/w_180,h_180');
 }) */
@@ -31,12 +31,12 @@ const productSchema = new mongoose.Schema({
   slug: {
     type: String,
     default: function () {
-      return slugify(this.name, {
-        lower: true,
-      });
+        return slugify(this.name, {
+          lower: true,
+        });
     },
   },
   images: [imageSchema],
-});
+})
 const Product = mongoose.model('Product', productSchema);
 module.exports = Product;

@@ -10,7 +10,7 @@
                 <p>Không cần đi đâu xa cũng có thể thưởng thức hamburger và
                     nhâm nhi gà rán cùng gia đình ngay tại nhà trong mùa dịch.
                     Còn chần chờ gì mà không đặt hàng ngay!!!</p>
-                <a href="/products" class="btn"><strong>Đặt hàng ngay !!</strong></a>
+                <a href="/products" class="btn"><strong>Order now &#10132;</strong></a>
             </div>
             <div class="col-2">
                 <img src="/img/home-img.png" alt = "burger-nhun-nhay">
@@ -58,36 +58,35 @@
             <div class="box">
                 <a href="/products">
                     <img class="image" src="img/g-6.jpg" alt="">
-                <div class="content">
-                    <img src="img/fried-chicken.png" width="50" height="50" alt="chicken icon">
-                    <h2>Gà rán</h2>
-                    <p></p>
-                </div>
+                    <div class="content">
+                        <img src="img/fried-chicken.png" width="50" height="50" alt="chicken icon">
+                        <h2>Gà rán</h2>
+                        <p></p>
+                    </div>
                 </a>
             </div>
 
             <div class="box">
                 <a href="/products">
-                <img class="image" src="img/s-img-4.webp" alt="">
-                <div class="content">
-                    <img src="img/soda.png" width="50" height="50" alt="soda icon">
-                    <h2>Nước</h2>
-                    <p></p>
-                </div>
+                    <img class="image" src="img/s-img-4.webp" alt="">
+                    <div class="content">
+                        <img src="img/soda.png" width="50" height="50" alt="soda icon">
+                        <h2>Nước</h2>
+                        <p></p>
+                    </div>
                 </a>
             </div>
 
             <div class="box">
                 <a href="/products">
-                <img class="image" src="img/s-img-5.webp" alt="">
-                <div class="content">
-                    <img src="img/cupcake.png" width="50" height="50" alt="cupcake icon">
-                    <h2>Bánh</h2>
-                    <p></p>
-                </div>
+                    <img class="image" src="img/s-img-5.webp" alt="">
+                    <div class="content">
+                        <img src="img/cupcake.png" width="50" height="50" alt="cupcake icon">
+                        <h2>Bánh</h2>
+                        <p></p>
+                    </div>
                 </a>
             </div>
-
         </div>
     </section>
     <section class="popular" id="popular">
@@ -98,7 +97,6 @@
                     <span class="price">
                         <%= product.price.toLocaleString('it-IT', {style : 'currency' , currency : 'VND' })%>
                     </span>
-                    <!--<a href="/product/<%= product.slug %>" alt="<%= product.slug %>">-->
                     <a href="/product/<%= product.slug %>">
                         <img src="<%= product.images[0].url %> " alt="<%= product.images[0].fileName %>">
                     </a>
@@ -116,7 +114,7 @@
         </div>
     </section>
     <section class="rate-us" id="rate-us">
-        <h1 class="heading"><a href="#">Đánh giá</a></h1>
+        <h1 class="heading"><a>Đánh giá</a></h1>
         <div class="sliderHome">
             <div class="slideHome active">
                 <img class="background" src="img/background-slide1.webp" alt="bg-danh-gia-active">

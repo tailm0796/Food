@@ -11,16 +11,16 @@ const orderProductModel = new mongoose.Schema({
   },
   qty: {
     type: Number,
-    required: true,
+    required: true
   },
   price: {
     type: Number,
-    required: true,
-  },
+    required: true
+  }
 });
-orderProductModel.pre(/^find/, function (next) {
+orderProductModel.pre(/^find/, function(next) {
   this.populate('product');
   next();
-});
-const OrderProduct = mongoose.model('OrderProduct', orderProductModel);
+})
+const OrderProduct = mongoose.model('OrderProduct',orderProductModel)
 module.exports = OrderProduct;

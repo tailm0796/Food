@@ -90,21 +90,10 @@
 
 .menunav {
   position: sticky;
-<<<<<<< HEAD
-  display:grid;
-  grid-template-columns: 14.2% 14.2% 14.2% 14.2% 14.2% 14.2% 14.2%;
-  gap: .5rem;
-  width: 86%;
-  height: 60px;
-  display: inline-flex;
-  font-size: 2rem;
-  margin: 10rem auto 1rem 13.5rem;
-=======
   top: 50px;
   width: 100%;
   display: inline-flex;
   font-size: 2vw;
->>>>>>> main
   background: #ecf0f1;
   border-radius: 10px;
   color: var(--black);
@@ -113,28 +102,15 @@
   text-align: center;
   text-decoration: none;
   justify-content: space-around;
-<<<<<<< HEAD
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
-  gap: 20px;
-  top: 8rem;
-=======
->>>>>>> main
   z-index: 1;
 }
 
 .menunav div {
-<<<<<<< HEAD
-  padding: 0.5% 0 0.5% 0;
-=======
   padding: 0.5% 3%;
->>>>>>> main
   background-color: #bdc3c7;
   border-radius: 5px;
   color: white;
   cursor: pointer;
-  flex: 1 1 30rem;
-  position: relative;
-  overflow: hidden;
 }
 
 .menunav div:hover, .menunav div.active{
@@ -147,6 +123,7 @@
 .dropbtn {
   font-size: 2.5rem;
   cursor: pointer;
+  z-index: -1;
   background-color: white;
 }
 
@@ -160,12 +137,7 @@
 .dropdown {
   position: relative;
   display: inline-block;
-<<<<<<< HEAD
-  margin: 2rem 0 0.7rem 13.5rem;
-  left: 2%;
-=======
   z-index: 2;
->>>>>>> main
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -201,14 +173,6 @@
 .show {
   display: block;
 }
-<<<<<<< HEAD
-
-/*chi tiet mon an*/
-
-.dishes .box-container {
-  display: grid;
-  grid-template-columns: 24% 24% 24% 24%;
-=======
 /*Hr tag*/
 hr{
   width: 100%;
@@ -226,7 +190,6 @@ hr{
 .dishes .box-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
->>>>>>> main
   gap: 2.5rem;
 }
 
@@ -249,38 +212,18 @@ hr{
 }
 
 .dishes .box-container .box .price {
-<<<<<<< HEAD
-  position: relative;
-  display: block;
-  color: var(--red);
-  font-weight: bold;
-=======
   position: absolute;
   background: var(--red);
   color: #fff;
->>>>>>> main
   font-size: 2rem;
   padding: .5rem 1rem;
   border-radius: .5rem;
-  width: 100%;
 }
 
-.dishes .box-container .box a {
+.dishes .box-container .box h3 {
   color: #333;
-<<<<<<< HEAD
-  font-weight: bold;
-  font-size: 2rem;
-  padding-top: 1rem;
-  width: 100%;
-  overflow: hidden;
-  text-align: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  text-decoration: none;
-=======
   overflow: hidden;
   font-size: 1.5rem;
->>>>>>> main
 }
 
 .dishes .box-container .box .stars i {
@@ -288,7 +231,6 @@ hr{
   font-size: 1.7rem;
   padding: 1rem .1rem;
 }
-
 /* media queries  */
 
 @media(max-width:1250px) {

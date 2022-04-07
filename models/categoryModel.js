@@ -12,17 +12,17 @@ const categorySchema = new mongoose.Schema({
   slug: {
     type: String,
     default: function () {
-      return slugify(this.name, {
-        lower: true,
-      });
+        return slugify(this.name, {
+            lower: true,
+        });
     },
   },
   products: [
     {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Product',
-    },
-  ],
-});
+       type: mongoose.Schema.Types.ObjectId,
+       ref: 'Product'   
+    }
+  ]
+})
 const Category = mongoose.model('Category', categorySchema);
-module.exports = Category;
+module.exports = Category; 

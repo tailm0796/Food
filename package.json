@@ -4,8 +4,7 @@
   "description": "a really cool app",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "eslint": "eslint . --ext .js"
+    "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,7 +16,6 @@
     "cookie-parser": "^1.4.5",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
-    "ejs-lint": "^1.2.1",
     "ejs-mate": "^3.0.0",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
@@ -34,12 +32,5 @@
   },
   "engines": {
     "node": "16.x"
-  },
-  "devDependencies": {
-    "eslint": "^8.11.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-html": "^6.2.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "2.6.0"
   }
 }

@@ -4,7 +4,7 @@ const categoryController = require('../controllers/categoryController');
 const productRoute = require('./productRoute');
 //category/3132412/product/
 
-route.use('/:categoryID/product', productRoute);
+route.use('/:categoryID/product', productRoute);   
 
 route
   .route('/')

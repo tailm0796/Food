@@ -1,19 +1,18 @@
 const express = require('express');
-const multer = require('multer');
-const router = express.Router({ mergeParams: true });
+const multer =  require('multer');
+const router = express.Router({ mergeParams:true });
 const productController = require('../controllers/productController');
 const { storage } = require('../cloudinary/index');
+const { cloudinary } = require('../cloudinary')
 const upload = multer({ storage });
 
 // /product/
 router.get('/bestSeller', productController.bestSeller);
 router
   .route('/')
-  .get(productController.getAllProduct, function (req, res) {
-    res.render('category', { title: 'Doreen | Thực đơn' });
-  })
+  .get(productController.getAllProduct)
   .post(upload.array('images'), productController.createNewProduct);
-//cai dat multer thi moi co req.files
+  //cai dat multer thi moi co req.files
 router
   .route('/:id')
   .get(productController.getProduct)

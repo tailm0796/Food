@@ -7,16 +7,16 @@ const orderModel = new mongoose.Schema({
   },
   message: {
     type: String,
-    default: 'No message',
+    default: "No message",
     required: true,
   },
   phone: {
     type: String,
-    required: true,
+    required:true,
   },
   address: {
-    type: String,
-    required: true,
+    type:String,
+    required:true,
   },
   totalPrice: {
     type: Number,
@@ -26,10 +26,10 @@ const orderModel = new mongoose.Schema({
     type: Number,
     required: [true, 'Please provide name of category'],
   },
-  date: {
+  date : {
     type: Date,
     default: Date.now,
-  },
-});
+  }
+})
 const Order = mongoose.model('Order', orderModel);
 module.exports = Order;

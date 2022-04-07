@@ -4,27 +4,27 @@ const User = require('../models/userModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 
-const signToken = (id) =>
-  jwt.sign({ id: id }, process.env.JWT_TOKEN_SECRET, {
+const signToken = (id) => 
+  jwt.sign({id: id}, process.env.JWT_TOKEN_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN,
   });
 const cookieOption = {
-  expires: new Date(
-    new Date(Date.now() + 7 * 3600 * 24 * 1000) // het han trong 7 ngay
+  expires: new Date (
+    new Date(Date.now() + 7 * 3600 * 24 * 1000 ) // het han trong 7 ngay
   ),
   httpOnly: true,
-};
-const sendJWTtoken = (res, user, statusCode) => {
-  const token = signToken(user._id);
-  res.cookie('jwt', token, cookieOption);
-  res.status(statusCode).json({
-    status: 'success',
-    token,
-    user,
-  });
-};
-module.exports.signup = catchAsync(async (req, res) => {
-  const user = await User.create({
+}
+const sendJWTtoken  = (res, user, statusCode) => {
+ const token = signToken(user._id);
+ res.cookie('jwt', token, cookieOption);
+ res.status(statusCode).json({
+   status: 'success',
+   token,
+   user,
+ })
+}
+module.exports.signup = catchAsync(async (req, res, next) => {
+  const user = await User.create({ 
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
@@ -33,26 +33,23 @@ module.exports.signup = catchAsync(async (req, res) => {
     address: req.body.address,
   });
   sendJWTtoken(res, user, 201);
-});
+})
 module.exports.login = catchAsync(async (req, res, next) => {
-  const { email, password } = req.body;
+  const { email , password } = req.body;
   if (!email || !password) {
-    return next(new AppError('Please provide email and password', 404));
+    return next(new AppError('Please provide email and password',404));
   }
-  const user = await User.findOne({ email: email });
-  if (!user || !(await user.comparePassword(password, user.password))) {
-    return next(new AppError('Email or passwornd incorrect.Try again', 404));
-  }
+  const user = await User.findOne({email: email});
+  if (!user || !(await user.comparePassword(password, user.password)) ) {
+    return next(new AppError('Email or passwornd incorrect.Try again',404))
+  };
   sendJWTtoken(res, user, 200);
-});
+})
 module.exports.protect = catchAsync(async (req, res, next) => {
   if (req.cookies.token)
-    if (
-      req.headers.authorization &&
-      req.headers.authorization.startsWith('Bearer')
-    ) {
-      token = req.headers.authorization.split(' ')[1];
-    }
+  if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
+    token = req.headers.authorization.split(' ')[1];
+  }
   if (!token) {
     return next(new AppError('Your are not login. Please login'), 401);
   }
@@ -61,15 +58,12 @@ module.exports.protect = catchAsync(async (req, res, next) => {
     process.env.JWT_TOKEN_SECRET
   );
   const currentUser = await User.findById(decoded.id);
-  if (!currentUser) {
-    return next(
-      new AppError('The user belonging with this token not exist'),
-      401
-    );
+  if(!currentUser) {
+    return next(new AppError('The user belonging with this token not exist'), 401);
   }
-  req.user = currentUser;
+  req.user = currentUser
   next();
-});
+})
 module.exports.restrictTo =
   (...roles) =>
   // roles = [admin,user,guide];
@@ -104,21 +98,20 @@ module.exports.isLogin = async (req, res, next) => {
   }
 };
 module.exports.loginAdmin = catchAsync(async (req, res, next) => {
-  const { email, password } = req.body;
+  const { email , password } = req.body;
   if (!email || !password) {
-    return next(new AppError('Please provide email and password', 404));
+    return next(new AppError('Please provide email and password',404));
   }
-  const user = await User.findOne({ email: email });
-  if (!user || !(await user.comparePassword(password, user.password))) {
-    return next(new AppError('Email or passwornd incorrect.Try again', 404));
-  }
-  if (user.role !== 'Admin')
-    return next(new AppError('Please login with admin account'), 403);
+  const user = await User.findOne({email: email});
+  if (!user || !(await user.comparePassword(password, user.password)) ) {
+    return next(new AppError('Email or passwornd incorrect.Try again',404))
+  };
+  if (user.role !== 'Admin') return next(new AppError('Please login with admin account'),403);
   sendJWTtoken(res, user, 200);
-});
+})
 module.exports.logout = (req, res) => {
   //Xoa session
-  res.clearCookie('session');
+  res.clearCookie("session");
   res.cookie('jwt', 'logout', {
     expires: new Date(Date.now() + 5 * 1000),
     httpOnly: true,
