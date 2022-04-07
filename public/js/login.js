@@ -7,8 +7,8 @@ const Regform = document.querySelector('#Regform');
 //   Indicator.style.transform = 'translateX(100px)';
 // }
 // function login() {
-//   Regform.style.transform = 'translateX(450px)';
-//   LoginForm.style.transform = 'translateX(475px)';
+//   Regform.style.transform = 'translateX(490px)';
+//   LoginForm.style.transform = 'translateX(185%)';
 //   Indicator.style.transform = 'translateX(-10px)';
 // }
 //DISPLAY FORM FOR USER

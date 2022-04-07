@@ -46,7 +46,7 @@ module.exports.details = catchAsync(async (req, res) => {
   res.render('layout/productDetails', {
     product,
     title: 'Doreen | Chi tiết',
-    page: '/product/:slug',
+    page: '<%= product.slug %>',
   });
 });
 module.exports.checkLogin = (req, res, next) => {
@@ -78,4 +78,7 @@ module.exports.blog = (req, res) => {
     title: 'Doreen | Blog',
     page: '/blog',
   });
+};
+module.exports.blog_post = (req, res) => {
+  res.render('layout/blog_post');
 };
