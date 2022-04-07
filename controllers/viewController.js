@@ -66,16 +66,11 @@ module.exports.checkout = (req, res) => {
 module.exports.products = catchAsync(async (req, res) => {
   const products = await Product.find();
   const categories = await Category.find().select('_id , name');
-  res.render('layout/category', {
-    products,
-    categories,
-    title: 'Doreen | Thực đơn',
-    page: '/products',
-  });
-});
-module.exports.blog = (req, res) => {
-  res.render('layout/blog', {
-    title: 'Doreen | Blog',
-    page: '/blog',
-  });
-};
+  res.render('layout/category', {products,categories});
+})
+module.exports.blog = (req , res) => {
+  res.render('layout/blog');
+}
+module.exports.blog_post = (req , res) => {
+  res.render('layout/blog_post');
+}

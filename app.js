@@ -73,4 +73,9 @@ app.use('/api/category', categoryRoute);
 
 // ERROR HANDLING MIDDELWARE
 app.use(gobalHandlingError);
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.use(function(req, res, next) {
+    res.status(404);
+    res.send('404: File Not Found');
+});
+// app.listen(port, () => console.log(`Example app listening on 3000 port!`))
+app.listen(process.env.PORT || 3000)

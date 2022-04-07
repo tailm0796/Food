@@ -1,11 +1,8 @@
 .slider {
-  margin: 0 auto;
-  top: 9rem;
-  bottom: 0;
-  width: 1250px;
-  min-height: 300px;
-  background: rgba(255, 255, 255, 0.897);
   position: relative;
+  width: 100%;
+  min-height: 400px;
+  background: rgba(255, 255, 255, 0.897);
   z-index: 1;
   border-radius: 10px;
   overflow: hidden;
@@ -31,7 +28,7 @@
 }
 
 .navigation {
-  height: 300px;
+  height: 40rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -67,6 +64,7 @@
   z-index: 999;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .navigation-visibility .slide-icon {
@@ -85,11 +83,14 @@
   background: white;
   opacity: 0.8;
 }
-
+.theproductpage {
+  
+}
 /*thanh menu*/
 
 .menunav {
   position: sticky;
+<<<<<<< HEAD
   display:grid;
   grid-template-columns: 14.2% 14.2% 14.2% 14.2% 14.2% 14.2% 14.2%;
   gap: .5rem;
@@ -98,22 +99,35 @@
   display: inline-flex;
   font-size: 2rem;
   margin: 10rem auto 1rem 13.5rem;
+=======
+  top: 50px;
+  width: 100%;
+  display: inline-flex;
+  font-size: 2vw;
+>>>>>>> main
   background: #ecf0f1;
   border-radius: 10px;
   color: var(--black);
   align-items: center;
-  padding: 10px 20px;
+  padding: 1% 2%;
   text-align: center;
   text-decoration: none;
   justify-content: space-around;
+<<<<<<< HEAD
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
   gap: 20px;
   top: 8rem;
+=======
+>>>>>>> main
   z-index: 1;
 }
 
 .menunav div {
+<<<<<<< HEAD
   padding: 0.5% 0 0.5% 0;
+=======
+  padding: 0.5% 3%;
+>>>>>>> main
   background-color: #bdc3c7;
   border-radius: 5px;
   color: white;
@@ -146,8 +160,12 @@
 .dropdown {
   position: relative;
   display: inline-block;
+<<<<<<< HEAD
   margin: 2rem 0 0.7rem 13.5rem;
   left: 2%;
+=======
+  z-index: 2;
+>>>>>>> main
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -183,17 +201,37 @@
 .show {
   display: block;
 }
+<<<<<<< HEAD
 
 /*chi tiet mon an*/
 
 .dishes .box-container {
   display: grid;
   grid-template-columns: 24% 24% 24% 24%;
+=======
+/*Hr tag*/
+hr{
+  width: 100%;
+  margin-bottom: 2rem;
+  color: 2px solid black;
+}
+
+/*chi tiet mon an*/
+
+.dishes {
+  position: relative;
+  justify-content: center;
+}
+
+.dishes .box-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+>>>>>>> main
   gap: 2.5rem;
 }
 
 .dishes .box-container .box {
-  padding: 1.5rem;
+  padding: 5%;
   background: #fff;
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
   border: .01rem solid rgba(0, 0, 0, .3);
@@ -205,17 +243,22 @@
 }
 
 .dishes .box-container .box img {
-  height: 25rem;
-  object-fit: contain;
+  height: 50%;
   width: 100%;
   border-radius: .5rem;
 }
 
 .dishes .box-container .box .price {
+<<<<<<< HEAD
   position: relative;
   display: block;
   color: var(--red);
   font-weight: bold;
+=======
+  position: absolute;
+  background: var(--red);
+  color: #fff;
+>>>>>>> main
   font-size: 2rem;
   padding: .5rem 1rem;
   border-radius: .5rem;
@@ -224,6 +267,7 @@
 
 .dishes .box-container .box a {
   color: #333;
+<<<<<<< HEAD
   font-weight: bold;
   font-size: 2rem;
   padding-top: 1rem;
@@ -233,6 +277,10 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   text-decoration: none;
+=======
+  overflow: hidden;
+  font-size: 1.5rem;
+>>>>>>> main
 }
 
 .dishes .box-container .box .stars i {
@@ -248,34 +296,11 @@
       max-width: 1000px;
       max-height: 200px;
   }
-  .dropdown{
-      margin-left: 11rem;
-  }
-  hr{
-      max-width: 1000px;
-      margin-left: 11rem;
-  }
   .dishes .box-container{
-      gap: 2rem;
       max-width: 100%;
       
   }
-  .menunav {
-      max-width: 1000px;
-      height: 40px;
-      font-size: 1.5rem;
-      margin: 10rem auto 1rem 11rem;
-      padding: 8px 16px;
-      gap: 15px;
-  }
-  
-  .menunav div {
-      padding: 0.5rem 3.5rem;
-      background-color: #bdc3c7;
-      border-radius: 5px;
-      color: white;
-  }
-
+ 
 }
 
 @media(max-width:991px) {
@@ -289,42 +314,21 @@
       padding: 2rem;
   }
   .slider {
-      max-width: 800px;
-      max-height: 200px;
+    width: 100%;
+    height: 1px;
   }
   .dishes{
-      margin-left: 7rem;
+      margin-left: 0rem;
   }
   .dishes .box-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 4rem;
-      max-width: 95%;
-  }
-  .dropdown{
-      margin-left: 9rem;
   }
   .dropbtn{
       font-size: 2rem;
   }
-  hr{
-      max-width: 800px;
-      margin-left: 9rem;
-  }
-  .menunav {
-      max-width: 800px;
-      height: 40px;
-      font-size: 1.4rem;
-      margin: 10rem auto 1rem 9rem;
-      padding: 8px 16px;
-      gap: 15px;
-  }
-  
-  .menunav a {
-      padding: 0.5rem 3.5rem;
-      background-color: #bdc3c7;
-      border-radius: 5px;
-      color: white;
+  .menunav div {
+    padding: 2% 3%;
   }
 }
 
@@ -353,21 +357,21 @@
       background: #fff;
   }
   .slider {
-      max-width: 600px;
-      max-height: 170px;
+      max-width: 100%;
+      max-height: 80px;
   }
   .dishes{
-      margin-right: 8rem;
+    justify-content: center;
   }
   .dishes .box-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 2.5rem;
       max-width: 105%;
   }
-  .dropdown{
-      margin-left: 8rem;
+  .dishes .box-container .box .name {
+    font-size: 3vw;
   }
+
   .dropbtn{
       font-size: 1.5rem;
   }
@@ -375,10 +379,7 @@
       padding: 12px 16px;
       font-size: 1.2rem;
   }
-  hr{
-      max-width: 600px;
-      margin-left: 8rem;
-  }
+
 }
 
 @media(max-width:450px) {
@@ -390,17 +391,15 @@
   }
   .dishes .box-container {
       display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      gap: 2.5rem;
+      grid-template-columns: auto;
   }
-  .dropdown{
-      margin-left: 13.5rem;
+  .dishes .box-container .box img {
+    height: 20rem;
   }
-  .dropbtn{
-      font-size: 1.5rem;
+  .dishes .box-container .box .name {
+    font-size: 5vw;
   }
-  hr{
-      max-width: 600px;
-      margin-left: 13.5rem;
+  .menunav div {
+    padding: 3.5% 3%;
   }
 }

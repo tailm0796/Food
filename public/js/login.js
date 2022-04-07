@@ -1,16 +1,16 @@
 const LoginForm = document.querySelector('#Loginform');
 const Regform = document.querySelector('#Regform');
-// const Indicator = document.querySelector('#Indicator');
-// function register() {
-//   Regform.style.transform = 'translateX(0px)';
-//   LoginForm.style.transform = 'translateX(0px)';
-//   Indicator.style.transform = 'translateX(100px)';
-// }
-// function login() {
-//   Regform.style.transform = 'translateX(450px)';
-//   LoginForm.style.transform = 'translateX(475px)';
-//   Indicator.style.transform = 'translateX(-10px)';
-// }
+const Indicator = document.querySelector('#Indicator');          
+    function register(){
+      Regform.style.transform = "translateX(0px)";
+      LoginForm.style.transform = "translateX(0px)";
+      Indicator.style.transform = "translateX(100px)";
+    }
+    function login(){
+      Regform.style.transform = "translateX(490px)";
+      LoginForm.style.transform = "translateX(185%)";
+      Indicator.style.transform = "translateX(-10px)";
+    }
 //DISPLAY FORM FOR USER
 // ALERT ///
 const hideAlert = () => {
@@ -26,19 +26,12 @@ const showAlert = (type, message) => {
 // HANDLE FORM
 const loginUser = async (email, password) => {
   try {
-    const response = await axios({
-      method: 'POST',
-      url: 'http://www.seoie204.me/api/user/login',
-      data: {
-        email,
-        password,
-      },
-    });
-    if (response.data.status === 'success') {
-      showAlert('success', 'Login Successfully');
-      window.setTimeout(() => {
-        location.assign('/home');
-      }, 1000);
+  const response = await axios ({
+    method: 'POST',
+    url:'http://localhost:3000/api/user/login',
+    data: {
+      email,
+      password,
     }
   } catch (err) {
     showAlert('failed', err.response.data.message);
@@ -53,17 +46,17 @@ LoginForm.addEventListener('submit', (e) => {
 //RESGISTER
 const registerUser = async (data) => {
   try {
-    const response = await axios({
-      method: 'POST',
-      url: 'http://www.seoie204.me/api/user/signup',
-      data,
-    });
-    if (response.data.status === 'success') {
-      showAlert('success', 'Register Successfully');
-      window.setTimeout(() => {
-        location.assign('/home');
-      }, 1000);
-    }
+  const response = await axios ({
+    method: 'POST',
+    url:'http://localhost:3000/api/user/signup',
+    data,
+  })
+  if (response.data.status === 'success'){
+    showAlert('success', 'Register Successfully');
+    window.setTimeout(() => {
+      location.assign('/home')
+    }, 1000);
+  }
   } catch (err) {
     showAlert('failed', err.response.data.message);
   }
