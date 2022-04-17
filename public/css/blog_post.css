@@ -354,6 +354,11 @@ Blog Area CSS
     width: calc(50% - 10px);
 }
 
+.post-content li{
+    list-style: disc;
+    margin-left: 20px;
+    font-size: 16px;
+}
 .popular-post-widget .single-populer-post img,
 .popular-post-widget .single-populer-post .post-content {
     -ms-flex-preferred-size: 50%;

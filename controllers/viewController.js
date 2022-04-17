@@ -46,6 +46,12 @@ module.exports.products = catchAsync(async(req, res) => {
 module.exports.blog = (req , res) => {
   res.render('layout/blog');
 }
-module.exports.blog_post = (req , res) => {
-  res.render('layout/blog_post');
+module.exports.cach_lam_ga_ran_sot_cay = (req , res) => {
+  res.render('layout/cach_lam_ga_ran_sot_cay');
+}
+module.exports.cach_lam_hamburger_bo_pho_mai = (req , res) => {
+  res.render('layout/cach_lam_hamburger_bo_pho_mai');
+}
+module.exports.soda_blue_ocean_voi_mau_xanh_tuoi_mat_giai_khat_cho_mua_he_oi_buc = (req , res) => {
+  res.render('layout/soda_blue_ocean_voi_mau_xanh_tuoi_mat_giai_khat_cho_mua_he_oi_buc');
 }

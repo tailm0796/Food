@@ -14,5 +14,7 @@ router.get('/createProductForm',viewController.createProductForm);
 router.get('/signup',viewController.signupForm);
 router.get('/login',viewController.loginForm);
 router.get('/blog',viewController.blog);
-router.get('/blog_post',viewController.blog_post);
+router.get('/blog/cach_lam_ga_ran_sot_cay',viewController.cach_lam_ga_ran_sot_cay);
+router.get('/blog/cach_lam_hamburger_bo_pho_mai',viewController.cach_lam_hamburger_bo_pho_mai);
+router.get('/blog/soda_blue_ocean_voi_mau_xanh_tuoi_mat_giai_khat_cho_mua_he_oi_buc',viewController.soda_blue_ocean_voi_mau_xanh_tuoi_mat_giai_khat_cho_mua_he_oi_buc);
 module.exports = router;
