@@ -69,6 +69,7 @@ app.use('/admin',adminRoute);
 app.use('/api/user', userRoute);
 app.use('/api/product', productRoute);
 app.use('/api/category', categoryRoute);
+app.use('/articles', articleRouter);
 
 // ERROR HANDLING MIDDELWARE
 app.use(gobalHandlingError);
