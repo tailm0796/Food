@@ -1,0 +1,139 @@
+<%- layout('./layout/template') %>
+<link rel="stylesheet" type="text/css" href="/css/blog.css" />
+
+<section>
+  <div class="blog-header">
+    <div class="blog-banner">
+      <div class="blog-container">
+        <h1 class="blog-banner-title"><span>FastFood</span> Review Blog</h1>
+        <p>Chia sẻ đến mọi người những món ăn ngon</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="video" id="video">
+    <div class="container">
+      <div class="title">
+        <h2>Video Gần Đây</h2>
+        <p>Giúp bạn tạo ra những món ăn ngon</p>
+      </div>
+
+      <div class="video-content">
+        <!-- item -->
+        <div class="video-item">
+          <div class="video-img">
+            <iframe
+              width="100%"
+              height="300"
+              src="https://www.youtube.com/embed/Gxv8LfNDex8"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-title">
+            <a href="#">CÁCH LÀM BÚN THỊT NƯỚNG</a>
+          </div>
+        </div>
+        <!-- end of item -->
+        <!-- item -->
+        <div class="video-item">
+          <div class="video-img">
+            <iframe
+              width="100%"
+              height="300"
+              src="https://www.youtube.com/embed/u1fpLRMzK4s"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-title">
+            <a href="#">CÁCH LÀM KHOAI TÂY BỎ LÒ SỐT PHÔ MAI</a>
+          </div>
+        </div>
+        <!-- end of item -->
+        <!-- item -->
+        <div class="video-item">
+          <div class="video-img">
+            <iframe
+              width="100%"
+              height="300"
+              src="https://www.youtube.com/embed/S6ECBp-YlFw"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-title">
+            <a href="#">CÁCH LÀM GỎI GÀ NGŨ SẮC</a>
+          </div>
+        </div>
+        <!-- end of item -->
+      </div>
+    </div>
+  </div>
+  <!-- end of design -->
+
+  <!-- blog -->
+  <div class="blog" id="blog">
+    <div class="container">
+      <div class="title">
+        <h2>Bài Viết Gần Đây</h2>
+        <p>Nơi chia sẻ những món ăn ngon</p>
+      </div>
+      <div class="blog-content">
+        <!-- item -->
+        <% articles.forEach(article => { %>
+        <div class="blog-item">
+          <div class="blog-img">
+            <img
+              src="https://i0.wp.com/www.esheepkitchen.com/wp-content/uploads/2019/03/pizza.jpg?resize=585%2C390&ssl=1"
+              alt="pizza"
+              width="100"
+              height="300"
+            />
+            <span><i class="far fa-heart"></i></span>
+          </div>
+
+          <div class="blog-text">
+            <span><%= article.createdAt.toLocaleDateString() %></span>
+            <span><%= article.writenBy %></span>
+            <h2><%= article.title.toUpperCase() %></h2>
+            <p><%= article.description %></p>
+            <a class="btn" href="articles/<%= article.slug %>">Đọc thêm</a>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+  <!-- end of design -->
+
+  <!-- about -->
+  <div class="about" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div>
+          <img src="/img/about-blog.jpg" alt="" />
+        </div>
+        <div class="about-text">
+          <div class="title">
+            <h2>Doreen Blog</h2>
+            <p>Đem đến những trải nghiệm tốt nhất</p>
+          </div>
+          <p>
+            Doreen sẽ luôn luôn lắng nghe những góp ý và chia sẻ từ khách hàng.
+          </p>
+          <p>
+            Ghé thăm không gian cửa hàng: Khu phố 6, phường Linh Trung, TP. Thủ
+            Đức, TP. Hồ Chí Minh
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

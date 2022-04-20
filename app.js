@@ -10,19 +10,19 @@ const cookieParser = require('cookie-parser'); // phan tich cu phap cookies
 const MongoStore = require('connect-mongo');
 const gobalHandlingError = require('./controllers/errorHandling');
 const app = express()
-// const port = 3000
+const port = process.env.PORT || 3000;
 dotenv.config({ path: './.env' });
 const DB = process.env.DB_CONNECTION.replace(
   '<password>',
   process.env.DB_PASSWORD
 );
-mongoose.connect(DB, {
+mongoose
+  .connect(DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => {
-    console.log('DB connection successfully');
-  });
+  .then(() => console.log('Database Connected'))
+  .catch((err) => console.log(err));
 const store = MongoStore.create({
   //luu session vao database
   mongoUrl: DB,
@@ -69,8 +69,8 @@ app.use('/admin',adminRoute);
 app.use('/api/user', userRoute);
 app.use('/api/product', productRoute);
 app.use('/api/category', categoryRoute);
+app.use('/articles', articleRouter);
 
 // ERROR HANDLING MIDDELWARE
 app.use(gobalHandlingError);
-// app.listen(port, () => console.log(`Example app listening on 3000 port!`))
-app.listen(process.env.PORT || 3000)
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
