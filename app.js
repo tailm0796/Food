@@ -10,7 +10,7 @@ const cookieParser = require('cookie-parser'); // phan tich cu phap cookies
 const MongoStore = require('connect-mongo');
 const gobalHandlingError = require('./controllers/errorHandling');
 const app = express()
-// const port = 3000
+const port = process.env.PORT || 3000;
 dotenv.config({ path: './.env' });
 const DB = process.env.DB_CONNECTION.replace(
   '<password>',
@@ -73,5 +73,4 @@ app.use('/articles', articleRouter);
 
 // ERROR HANDLING MIDDELWARE
 app.use(gobalHandlingError);
-// app.listen(port, () => console.log(`Example app listening on 3000 port!`))
-app.listen(process.env.PORT || 3000)
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
